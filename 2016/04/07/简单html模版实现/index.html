@@ -6,19 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>简单html模版实现 | 学会思考</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##背景当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。我们只需要简单的if else，和一些变量替换。然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  
-##功能&amp;amp;使用支持 if for else seitch case break 等使用起来非常简单。源码解析">
+  <meta name="description" content="背景当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。我们只需要简单的if else，和一些变量替换。然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  
+功能&amp;amp;使用支持 if for else seitch case break 等使用起来非常简单。源码解析如下
+1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单html模版实现">
 <meta property="og:url" content="http://flyovergu.github.io/2016/04/07/简单html模版实现/index.html">
 <meta property="og:site_name" content="学会思考">
-<meta property="og:description" content="##背景当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。我们只需要简单的if else，和一些变量替换。然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  
-##功能&amp;amp;使用支持 if for else seitch case break 等使用起来非常简单。源码解析">
-<meta property="og:updated_time" content="2016-04-07T13:45:20.000Z">
+<meta property="og:description" content="背景当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。我们只需要简单的if else，和一些变量替换。然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  
+功能&amp;amp;使用支持 if for else seitch case break 等使用起来非常简单。源码解析如下
+1">
+<meta property="og:updated_time" content="2016-04-07T13:48:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单html模版实现">
-<meta name="twitter:description" content="##背景当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。我们只需要简单的if else，和一些变量替换。然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  
-##功能&amp;amp;使用支持 if for else seitch case break 等使用起来非常简单。源码解析">
+<meta name="twitter:description" content="背景当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。我们只需要简单的if else，和一些变量替换。然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  
+功能&amp;amp;使用支持 if for else seitch case break 等使用起来非常简单。源码解析如下
+1">
   
   
     <link rel="icon" href="http://7xp1l3.com1.z0.glb.clouddn.com/avatar.jpg">
@@ -210,8 +213,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##背景<br>当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,<br>但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。<br>我们只需要简单的if else，和一些变量替换。<br>然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  </p>
-<p>##功能&amp;使用<br>支持 <code>if for else seitch case break</code> 等<br>使用起来非常简单。<br>源码解析如下</p>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,<br>但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。<br>我们只需要简单的if else，和一些变量替换。<br>然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  </p>
+<h2 id="功能-amp-使用"><a href="#功能-amp-使用" class="headerlink" title="功能&amp;使用"></a>功能&amp;使用</h2><p>支持 <code>if for else seitch case break</code> 等<br>使用起来非常简单。<br>源码解析如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function tkTemplate(select, data) &#123;</span><br><span class="line">    // 模版</span><br><span class="line">    var tp = $(select).html();</span><br><span class="line">    // 自定义识别区域 &lt;%code%&gt;</span><br><span class="line">    var re = /&lt;%([^%&gt;]+)?%&gt;/g;</span><br><span class="line">    // 能识别的代码 </span><br><span class="line">    var reCode = /(^( )?(if|for|else|switch|case|break|&#123;|&#125;))(.*)?/g;</span><br><span class="line">    // 最后执行的code</span><br><span class="line">    var code = &apos;var r = [];\n&apos;;</span><br><span class="line">    // 识别的位置</span><br><span class="line">    var cursor = 0;</span><br><span class="line">    // 把识别到的文本，加到code中</span><br><span class="line">    var add = function(line, js) &#123;</span><br><span class="line">        js ? (code += line.match(reCode) ? line + &apos;\n&apos; : &apos;r.push(&apos; + line + &apos;);\n&apos;) :</span><br><span class="line">        (code += line != &apos;&apos; ? &apos;r.push(&quot;&apos; + line.replace(/&quot;/g, &apos;\\&quot;&apos;) + &apos;&quot;);\n&apos; : &apos;&apos;);</span><br><span class="line">        return add;</span><br><span class="line">    &#125;</span><br><span class="line">    // 全文中找关键字</span><br><span class="line">    while (match = re.exec(tp)) &#123;</span><br><span class="line">        // 把识别到的关键字之前的文本放入code，并且把关键字也放入code</span><br><span class="line">        add(tp.slice(cursor, match.index))(match[1], true);</span><br><span class="line">        // 改变游标位置</span><br><span class="line">        cursor = match.index + match[0].length;</span><br><span class="line">    &#125;</span><br><span class="line">    add(tp.substr(cursor, tp.length - cursor));</span><br><span class="line">    code += &apos;return r.join(&quot;&quot;);&apos;;</span><br><span class="line">    // 执行code</span><br><span class="line">    return new Function(code.replace(/[\r\t\n]/g, &apos;&apos;)).apply(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
