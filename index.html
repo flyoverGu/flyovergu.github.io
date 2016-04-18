@@ -105,7 +105,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/源码/" style="font-size: 10px;">源码</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a>
+						<a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心得/" style="font-size: 10px;">心得</a> <a href="/tags/源码/" style="font-size: 10px;">源码</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a>
 					</div>
 				</section>
 				
@@ -170,6 +170,91 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-积累和经验 html5 video player" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/17/积累和经验 html5 video player/" class="article-date">
+  	<time datetime="2016-04-17T13:53:44.000Z" itemprop="datePublished">2016-04-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/17/积累和经验 html5 video player/">积累和经验 html5 video player</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>在每天的工作过程中，认真积累，刻意练习。把日常遇到的问题总结纪录下来，然后转化成经验，最后再在项目中使用提升效率。</p>
+</blockquote>
+<p>最近在项目接到要在手机千牛端做视频播放。当然我不用考虑不支持video标签的浏览器。不然的话就直接GG了。之前其实是没有真正做过video视频播放这块内容，所以趁着正好项目需要，好好学习了下。<br>首先是video标签的<a href="http://www.w3school.com.cn/tags/tag_video.asp" target="_blank" rel="external">API</a></p>
+<ul>
+<li>autoplay    如果出现该属性，则视频在就绪后马上播放。</li>
+<li>controls    如果出现该属性，则向用户显示控件，比如播放按钮。</li>
+<li>height  设置视频播放器的高度。</li>
+<li>loop    如果出现该属性，则当媒介文件完成播放后再次开始播放。</li>
+<li>muted    规定视频的音频输出应该被静音。</li>
+<li>poster    URL    规定视频下载时显示的图像，或者在用户点击播放按钮前显示的图像。</li>
+<li>preload 如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 “autoplay”，则忽略该属性。</li>
+<li>src    要播放的视频的 URL。</li>
+<li>width 设置视频播放器的宽度。</li>
+</ul>
+<p>然后是video<strong><em>原生Dom对象</em></strong>支持的<a href="http://www.w3school.com.cn/jsref/dom_obj_video.asp" target="_blank" rel="external">API和事件</a>，这个就非常多，并且功能强大。我然后实现一个html5的播放器，基本上就是它的API进行调用。   </p>
+<hr>
+<p>虽然一切看上去都顺利，各种api也都有，直接用video标签，然后给个src，一切搞定。但是别忘了，项目有个大前提，那就是在千牛客户端（webView）下。它虽然支持video标签，但是偏偏对全屏支持得像一坨屎。并且千牛中并<strong><em>没有重力感应</em></strong>！也就是说完美全屏是不可能了。<br>那么退而求其次，实现伪全屏。 我首先想到的2种实现方式：</p>
+<ol>
+<li>监听video的全屏事件，然后组织事件冒泡，最后自己实现伪全屏。</li>
+<li>自己写个html5的播放器。然后实现伪全屏。</li>
+</ol>
+<p>然而事实证明第一种方式并不可行，虽然我可以监听到<code>fullscreenchange</code>事件，但是并不能阻止系统级的全屏，不论是<code>return false</code>还是<code>stopPropagation</code>和<code>preventDefault</code>。当然可以在出发全屏事件的时候，直接调用<code>webkitExitFullscreen</code>退出全屏。这样从界面上看上会有一个闪屏的bug。</p>
+<p>于是就是第二种方案，自己实现一个video。贴下源码<a href="https://github.com/flyoverGu/html5-video-player" target="_blank" rel="external">git地址</a>，还没有抽象得很好，但是基本能用了，有兴趣的自己看下，高手绕道啊。其实在写的时候并不是很难，基本上是调用文档API，搭一下界面。<br>当然也有几个<strong><em>注意点</em></strong>： </p>
+<ol>
+<li>video的某几个API不支持，手动调用，像在console中直接执行<code>video.webkitRequestFullScreen()</code>，会有提醒<code>Failed to execute &#39;requestFullScreen&#39; on &#39;Element&#39;: API can only be initiated by a user gesture</code>， 这种API就只能用户主动出发。</li>
+<li>不要在video加载完成之前，就调用API，这样会出现这样的[错误]<br>(<a href="http://stackoverflow.com/questions/3165444/html5-video-chrome-error-settings-currenttime" target="_blank" rel="external">http://stackoverflow.com/questions/3165444/html5-video-chrome-error-settings-currenttime</a>)</li>
+</ol>
+<p>总结下，其实实现一个播放器并不复杂。但是在选择一个现成的轮子还是自己造一个轮子的时候，要审时度势。用别人的轮子，前提也是你必须hold住。要了解过，比较过差异。这样就时经验，需要我们慢慢积累。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心得/">心得</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-当你不知道干什么的时候，可以看看这些" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -312,7 +397,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/template/">template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/源码/">源码</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/template/">template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/源码/">源码</a></li></ul>
 	</div>
 
       
