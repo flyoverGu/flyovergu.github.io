@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3 xiao demo</title>
+    <style>
+    .block {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        margin: 3px;
+        cursor: pointer;
+    }
+    .color-1 {
+        background: red;
+    }
+    .color-2 {
+        background: green;
+    }
+    .color-0 {
+        background: yellow;
+    }
+    .high-light {
+        box-shadow: 0px 0px 2px 4px #2196F3;
+    }
+    </style>
+</head>
+
+<body>
+    点击色块即可
+    <div class="map">
+    </div>
+    与坐标点附近颜色相同的数量: <span class="result"></span>
+
+</body>
+<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+<script src="./index.js"></script>
+
+</html>
