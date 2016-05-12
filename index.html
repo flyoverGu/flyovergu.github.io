@@ -343,6 +343,9 @@
 <li>不要在video加载完成之前，就调用API，这样会出现这样的[错误]<br>(<a href="http://stackoverflow.com/questions/3165444/html5-video-chrome-error-settings-currenttime" target="_blank" rel="external">http://stackoverflow.com/questions/3165444/html5-video-chrome-error-settings-currenttime</a>)</li>
 </ol>
 <p>总结下，其实实现一个播放器并不复杂。但是在选择一个现成的轮子还是自己造一个轮子的时候，要审时度势。用别人的轮子，前提也是你必须hold住。要了解过，比较过差异。这样就时经验，需要我们慢慢积累。</p>
+<p>后记:<br>这里项目地址代码是最基础的demo版本。在项目使用过程又改了许多bug。这里就不更新了。<br>在实际项目开发中，当video停止播放(不是暂停)之后，video依旧在加载video资源。这样会导致不必要的资源浪费。经过实践可通过以下方式解决    </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">audio.pause();   </span><br><span class="line">audio.src = <span class="string">""</span>; </span><br><span class="line">audio.load();</span><br></pre></td></tr></table></figure>
+<p>详细问题解决地址 <a href="http://stackoverflow.com/questions/4071872/html5-video-force-abort-of-buffering" target="_blank" rel="external">点这里</a></p>
 
       
     </div>
