@@ -105,7 +105,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/devTool/" style="font-size: 10px;">devTool</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/小游戏/" style="font-size: 20px;">小游戏</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心得/" style="font-size: 10px;">心得</a> <a href="/tags/源码/" style="font-size: 10px;">源码</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a>
+						<a href="/tags/chrome/" style="font-size: 20px;">chrome</a> <a href="/tags/devTool/" style="font-size: 20px;">devTool</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/不为人知/" style="font-size: 10px;">不为人知</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/小游戏/" style="font-size: 20px;">小游戏</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心得/" style="font-size: 10px;">心得</a> <a href="/tags/源码/" style="font-size: 10px;">源码</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a>
 					</div>
 				</section>
 				
@@ -171,10 +171,75 @@
 
       <div class="body-wrap">
   
-    <article id="post-非常用chrome功能" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-哪些不为人知的实用chrome debug技巧" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/15/非常用chrome功能/" class="article-date">
+      <a href="/2016/05/21/哪些不为人知的实用chrome debug技巧/" class="article-date">
+  	<time datetime="2016-05-21T12:15:47.000Z" itemprop="datePublished">2016-05-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/21/哪些不为人知的实用chrome debug技巧/">哪些不为人知的实用chrome debug技巧</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这个跟上一篇chrome开发功能是姐妹篇，都是‘不为人知’系列。哈哈～<br>这篇主要讲一下在debug过程中，使用到的实用技巧。当然也比较小众的技巧。</p>
+</blockquote>
+<ol>
+<li><p>编辑断点。chrome浏览器的debug本身做得非常程序员化，可以支持编辑断点。就是可以设置在什么情况下触发断点。这个功能当在循环语句中打断点的时候，非常有用！因为通常情况下并不是所有这个循环下的断点都要进。为了提高定位问题的速度，可以给断点增加一个条件，只有当条件语句为true时，才触发断点。<br> 看截图，在断点上右键，然后选Edit breakpoint<br><img src="http://ww2.sinaimg.cn/large/a15b4afegw1f43acbm60jj21kw0g8dkp" alt="编辑断点1"><br> 此时写条件语句，只有当条件语句为<code>true</code>时，才触发断点。<br><img src="http://ww2.sinaimg.cn/large/a15b4afegw1f43ahfan8rj21ks0ion2o" alt="编辑断点2"></p>
+</li>
+<li><p>在断点处执行上下文环境下执行语句。这个功能其实大家都会用。但是大家用的流程是这样的：复制代码，然后打开console，粘贴代码，最后执行代码看看结果。其实还有更简单的方式，选中需要执行的代码，然后按快捷键<code>ctrl+shift+e</code>,就直接能在控制台看到执行结果。<br><img src="http://ww2.sinaimg.cn/large/a15b4afegw1f43bb91ql3j21g60rsag3" alt="执行选中语句"></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/devTool/">devTool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/不为人知/">不为人知</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-哪些不为人知的实用chrome开发工具功能" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/15/哪些不为人知的实用chrome开发工具功能/" class="article-date">
   	<time datetime="2016-05-15T14:05:45.000Z" itemprop="datePublished">2016-05-15</time>
 </a>
     </div>
@@ -188,7 +253,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/15/非常用chrome功能/">哪些不为人知的实用chrome开发工具功能</a>
+      <a class="article-title" href="/2016/05/15/哪些不为人知的实用chrome开发工具功能/">哪些不为人知的实用chrome开发工具功能</a>
     </h1>
   
 
@@ -197,7 +262,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>网上有很多很全面详细的介绍，但是我觉得其实许多功能我们正常的开发并用不到，这里我只介绍一些我们开发过程非常实用，但是平时都不知道的功能。</p>
+        <blockquote>
+<p>网上有很多很全面详细的介绍，但是我觉得其实许多功能我们正常的开发并用不到，这里我只介绍一些我们开发过程非常实用，但是平时都不知道的功能。</p>
+</blockquote>
 <p><img src="http://7xp1l3.com1.z0.glb.clouddn.com/blog/chrome/all.png" alt="all"><br>这个基本上是我们前端工程师明天都会看到的界面，也就是我们的工地，金矿。上面标的1，2，3，4，5。就是我要介绍的一些功能。</p>
 <ol>
 <li><p>在element界面，我们最常用的就是查看／修改dom结构，查看／修改css样式，等等。其实我们还可以<strong><em>给dom节点打断点</em></strong>。那么给没有逻辑的dom节点打断点，有什么作用呢？<br>有三个非常实用的作用：<strong><em>监听子节点变更，监听当前节点属性变更，监听当前节点移除</em></strong>。<br>最常用用到的场景就是当遇到莫名其妙dom节点消失了，或者dom节点属性变更，又不知道是哪里的js造成的。此时用这个功能，就能非常快速的定位问题。<br><img src="http://7xp1l3.com1.z0.glb.clouddn.com/blog/chrome/element.png" alt="element"></p>
