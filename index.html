@@ -105,7 +105,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/chrome/" style="font-size: 20px;">chrome</a> <a href="/tags/devTool/" style="font-size: 20px;">devTool</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/不为人知/" style="font-size: 10px;">不为人知</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/小游戏/" style="font-size: 20px;">小游戏</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心得/" style="font-size: 10px;">心得</a> <a href="/tags/源码/" style="font-size: 20px;">源码</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a>
+						<a href="/tags/chrome/" style="font-size: 15px;">chrome</a> <a href="/tags/devTool/" style="font-size: 15px;">devTool</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/不为人知/" style="font-size: 10px;">不为人知</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/小游戏/" style="font-size: 15px;">小游戏</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心得/" style="font-size: 10px;">心得</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/源码/" style="font-size: 15px;">源码</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a>
 					</div>
 				</section>
 				
@@ -170,6 +170,67 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-搜索算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/04/搜索算法/" class="article-date">
+  	<time datetime="2016-06-04T09:30:16.000Z" itemprop="datePublished">2016-06-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/04/搜索算法/">搜索算法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。      </p>
+</blockquote>
+<p>搜索的本质，就是遍历各种可能性，然后通过一些奇淫巧技排除一些可能性，我们俗称剪枝。剪枝的优劣，直接影响到算法性能。<br>问它能解决什么问题呢？它能解决所有问题，因为它枚举了所有可能性。只不过需要大量的剪枝技巧来优化性能。<br>举个栗子：你在一个小区里找一个人，但是你又不知道他具体住哪里？那最土的办法就是挨家挨户的找。这个就是搜索，当你明确知道他不在某栋楼里的时候，你就不用搜索这栋楼了。这个就叫剪枝。<br>很多时候，为了提高性能，但是又没有明确条件的时候，可以采用暴力剪枝。<br>还是那个找人的栗子，比如就只找奇数号楼。这样效率虽然高了不少，但是也有可能永远找不到正确答案。在实际运用中，暴力剪枝还是非常常见的。这是个取舍问题，比如保证正确率在80%就够了，或者找到近似答案就行了。<br>搜索是一种思想，所有它可以衍生出非常多具体的，针对某一些具体问题的算法。<br>常见的有：深度优先遍历（搜索），和广度优先遍历（搜索）。<br>给个结构树说明下：<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jcvazr0yj20fq0b0js5" alt=""><br>如果遍历顺序是<code>A,B,E,H</code>，这样的就是深度遍历。如果是<code>A,B,C,D</code>，这样遍历就是广度优先。这个时候就觉得大学的好好学习的重要性了，在实际开发中吃多少的亏啊！<br>本文篇(wo)幅(bi)有(jiao)限(lan)，只介绍下广度优先的搜索。<br>以上是一维平面下，其实二维平面也是一样的。只要理解其中的精髓，其实都一样的。<br>看图<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jd8agyckj20b006yq3d" alt=""><br>整个图可以看成xy的坐标系。那么人和门的位置就是坐标点。那人移动就变成了[-1,0],[1,0],[0,1],[0,-1]。 那么人要找到出口就是，枚举四个方向，然后移动，然后再枚举四个方向。终有一天，是能找到出口的。<br>然后在这个基础上增加难度，就是增加障碍物。像这样<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jdg5h2lkj20b605sjri" alt="">，这样子人就只能从墙的两边绕过去。这样其实也就是在判断的时候增加了几个判断条件而已。</p>
+<p>最后给一个可以demo，源码源码就在页面上。<a href="http://flyovergu.github.io/labs/prisonBreak/index.html">地址</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-connect源码解读" class="article article-type-post" itemscope itemprop="blogPost">
   

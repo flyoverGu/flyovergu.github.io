@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>prison break</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="control">
+            <div class="item">
+                <div class="people block" draggable="true" ondragstart="_dragStart(event, 'people')">
+                </div>
+            </div>
+            <div class="item">
+                <div class="out-door block" draggable="true" ondragstart="_dragStart(event, 'out-door')">
+                </div>
+            </div>
+            <div class="item">
+                <div class="wall block">
+                </div>
+            </div>
+            <div class="item">
+                <div class="door door-1 block" draggable="true" ondragstart="_dragStart(event, 'door door-1')">
+                </div>
+                <div class="key key-1 block" draggable="true" ondragstart="_dragStart(event, 'key key-1')">
+                </div>
+            </div>
+            <div class="item">
+                <div class="door door-2 block" draggable="true" ondragstart="_dragStart(event, 'door door-2')">
+                </div>
+                <div class="key key-2 block" draggable="true" ondragstart="_dragStart(event, 'key key-2')">
+                </div>
+            </div>
+            <div class="item">
+                <div class="door door-3 block" draggable="true" ondragstart="_dragStart(event, 'door door-3')">
+                </div>
+                <div class="key key-3 block" draggable="true" ondragstart="_dragStart(event, 'key key-3')">
+                </div>
+            </div>
+            <div class="item">
+                <div class="door door-4 block" draggable="true" ondragstart="_dragStart(event, 'door door-4')">
+                </div>
+                <div class="key key-4 block" draggable="true" ondragstart="_dragStart(event, 'key key-4')">
+                </div>
+            </div>
+            <div class="item">
+                <div class="door door-5 block" draggable="true" ondragstart="_dragStart(event, 'door door-5')">
+                </div>
+                <div class="key key-5 block" draggable="true" ondragstart="_dragStart(event, 'key key-5')">
+                </div>
+            </div>
+            <input type="button" class="start" value="start"></input>
+            <input type="button" class="reset" value="reset"></input>
+        </div>
+        <div class="prison" ondrop="return _drop(event)" ondragenter="return _dropOver(event)"
+        ondragover="return _allow(event)">
+        </div>
+    </div>
+</body>
+
+<script type="text/html" id="">
+</script>
+
+<script type="text/html" id="block">
+    <div class="block" draggable="true">
+    </div>
+</script>
+
+<script type="text/html" id="row">
+    <div class="row">
+    </div>
+</script>
+
+<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+<script src="./lib.js"></script>
+<script src="./index.js"></script>
+
+</html>

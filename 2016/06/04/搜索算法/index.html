@@ -4,30 +4,28 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>积累和经验 html5 video player | 他好像一条狗</title>
+  <title>搜索算法 | 他好像一条狗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在每天的工作过程中，认真积累，刻意练习。把日常遇到的问题总结纪录下来，然后转化成经验，最后再在项目中使用提升效率。
+  <meta name="description" content="在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。      
 
-最近在项目接到要在手机千牛端做视频播放。当然我不用考虑不支持video标签的浏览器。不然的话就直接GG了。之前其实是没有真正做过video视频播放这块内容，所以趁着正好项目需要，好好学习了下。首先是video标签的API
-
-autoplay    如果出现该属性，则视频在就绪后马">
+搜索的本质，就是遍历各种可能性，然后通过一些奇淫巧技排除一些可能性，我们俗称剪枝。剪枝的优劣，直接影响到算法性能。问它能解决什么问题呢？它能解决所有问题，因为它枚举了所有可能性。只不过需要大量的剪枝技巧来优化性能。举个栗子：你在一个小区里找一个人，但是你又不知道他具体住哪里？那最土">
 <meta property="og:type" content="article">
-<meta property="og:title" content="积累和经验 html5 video player">
-<meta property="og:url" content="http://flyovergu.github.io/2016/04/17/积累和经验 html5 video player/index.html">
+<meta property="og:title" content="搜索算法">
+<meta property="og:url" content="http://flyovergu.github.io/2016/06/04/搜索算法/index.html">
 <meta property="og:site_name" content="他好像一条狗">
-<meta property="og:description" content="在每天的工作过程中，认真积累，刻意练习。把日常遇到的问题总结纪录下来，然后转化成经验，最后再在项目中使用提升效率。
+<meta property="og:description" content="在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。      
 
-最近在项目接到要在手机千牛端做视频播放。当然我不用考虑不支持video标签的浏览器。不然的话就直接GG了。之前其实是没有真正做过video视频播放这块内容，所以趁着正好项目需要，好好学习了下。首先是video标签的API
-
-autoplay    如果出现该属性，则视频在就绪后马">
-<meta property="og:updated_time" content="2016-05-12T03:30:39.000Z">
+搜索的本质，就是遍历各种可能性，然后通过一些奇淫巧技排除一些可能性，我们俗称剪枝。剪枝的优劣，直接影响到算法性能。问它能解决什么问题呢？它能解决所有问题，因为它枚举了所有可能性。只不过需要大量的剪枝技巧来优化性能。举个栗子：你在一个小区里找一个人，但是你又不知道他具体住哪里？那最土">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f4jcvazr0yj20fq0b0js5">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f4jd8agyckj20b006yq3d">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f4jdg5h2lkj20b605sjri">
+<meta property="og:updated_time" content="2016-06-04T10:37:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="积累和经验 html5 video player">
-<meta name="twitter:description" content="在每天的工作过程中，认真积累，刻意练习。把日常遇到的问题总结纪录下来，然后转化成经验，最后再在项目中使用提升效率。
+<meta name="twitter:title" content="搜索算法">
+<meta name="twitter:description" content="在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。      
 
-最近在项目接到要在手机千牛端做视频播放。当然我不用考虑不支持video标签的浏览器。不然的话就直接GG了。之前其实是没有真正做过video视频播放这块内容，所以趁着正好项目需要，好好学习了下。首先是video标签的API
-
-autoplay    如果出现该属性，则视频在就绪后马">
+搜索的本质，就是遍历各种可能性，然后通过一些奇淫巧技排除一些可能性，我们俗称剪枝。剪枝的优劣，直接影响到算法性能。问它能解决什么问题呢？它能解决所有问题，因为它枚举了所有可能性。只不过需要大量的剪枝技巧来优化性能。举个栗子：你在一个小区里找一个人，但是你又不知道他具体住哪里？那最土">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f4jcvazr0yj20fq0b0js5">
   
   
     <link rel="icon" href="http://7xp1l3.com1.z0.glb.clouddn.com/avatar.jpg">
@@ -182,11 +180,11 @@ autoplay    如果出现该属性，则视频在就绪后马">
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-积累和经验 html5 video player" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-搜索算法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/17/积累和经验 html5 video player/" class="article-date">
-  	<time datetime="2016-04-17T13:53:44.000Z" itemprop="datePublished">2016-04-17</time>
+      <a href="/2016/06/04/搜索算法/" class="article-date">
+  	<time datetime="2016-06-04T09:30:16.000Z" itemprop="datePublished">2016-06-04</time>
 </a>
     </div>
   
@@ -199,7 +197,7 @@ autoplay    如果出现该属性，则视频在就绪后马">
         
   
     <h1 class="article-title" itemprop="name">
-      积累和经验 html5 video player
+      搜索算法
     </h1>
   
 
@@ -208,7 +206,7 @@ autoplay    如果出现该属性，则视频在就绪后马">
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心得/">心得</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
 	</div>
 
         
@@ -220,37 +218,10 @@ autoplay    如果出现该属性，则视频在就绪后马">
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>在每天的工作过程中，认真积累，刻意练习。把日常遇到的问题总结纪录下来，然后转化成经验，最后再在项目中使用提升效率。</p>
+<p>在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。      </p>
 </blockquote>
-<p>最近在项目接到要在手机千牛端做视频播放。当然我不用考虑不支持video标签的浏览器。不然的话就直接GG了。之前其实是没有真正做过video视频播放这块内容，所以趁着正好项目需要，好好学习了下。<br>首先是video标签的<a href="http://www.w3school.com.cn/tags/tag_video.asp" target="_blank" rel="external">API</a></p>
-<ul>
-<li>autoplay    如果出现该属性，则视频在就绪后马上播放。</li>
-<li>controls    如果出现该属性，则向用户显示控件，比如播放按钮。</li>
-<li>height  设置视频播放器的高度。</li>
-<li>loop    如果出现该属性，则当媒介文件完成播放后再次开始播放。</li>
-<li>muted    规定视频的音频输出应该被静音。</li>
-<li>poster    URL    规定视频下载时显示的图像，或者在用户点击播放按钮前显示的图像。</li>
-<li>preload 如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 “autoplay”，则忽略该属性。</li>
-<li>src    要播放的视频的 URL。</li>
-<li>width 设置视频播放器的宽度。</li>
-</ul>
-<p>然后是video<strong><em>原生Dom对象</em></strong>支持的<a href="http://www.w3school.com.cn/jsref/dom_obj_video.asp" target="_blank" rel="external">API和事件</a>，这个就非常多，并且功能强大。我然后实现一个html5的播放器，基本上就是它的API进行调用。   </p>
-<hr>
-<p>虽然一切看上去都顺利，各种api也都有，直接用video标签，然后给个src，一切搞定。但是别忘了，项目有个大前提，那就是在千牛客户端（webView）下。它虽然支持video标签，但是偏偏对全屏支持得像一坨屎。并且千牛中并<strong><em>没有重力感应</em></strong>！也就是说完美全屏是不可能了。<br>那么退而求其次，实现伪全屏。 我首先想到的2种实现方式：</p>
-<ol>
-<li>监听video的全屏事件，然后组织事件冒泡，最后自己实现伪全屏。</li>
-<li>自己写个html5的播放器。然后实现伪全屏。</li>
-</ol>
-<p>然而事实证明第一种方式并不可行，虽然我可以监听到<code>fullscreenchange</code>事件，但是并不能阻止系统级的全屏，不论是<code>return false</code>还是<code>stopPropagation</code>和<code>preventDefault</code>。当然可以在出发全屏事件的时候，直接调用<code>webkitExitFullscreen</code>退出全屏。这样从界面上看上会有一个闪屏的bug。</p>
-<p>于是就是第二种方案，自己实现一个video。贴下源码<a href="https://github.com/flyoverGu/html5-video-player" target="_blank" rel="external">git地址</a>，还没有抽象得很好，但是基本能用了，有兴趣的自己看下，高手绕道啊。其实在写的时候并不是很难，基本上是调用文档API，搭一下界面。<br>当然也有几个<strong><em>注意点</em></strong>： </p>
-<ol>
-<li>video的某几个API不支持，手动调用，像在console中直接执行<code>video.webkitRequestFullScreen()</code>，会有提醒<code>Failed to execute &#39;requestFullScreen&#39; on &#39;Element&#39;: API can only be initiated by a user gesture</code>， 这种API就只能用户主动出发。</li>
-<li>不要在video加载完成之前，就调用API，这样会出现这样的[错误]<br>(<a href="http://stackoverflow.com/questions/3165444/html5-video-chrome-error-settings-currenttime" target="_blank" rel="external">http://stackoverflow.com/questions/3165444/html5-video-chrome-error-settings-currenttime</a>)</li>
-</ol>
-<p>总结下，其实实现一个播放器并不复杂。但是在选择一个现成的轮子还是自己造一个轮子的时候，要审时度势。用别人的轮子，前提也是你必须hold住。要了解过，比较过差异。这样就时经验，需要我们慢慢积累。</p>
-<p>后记:<br>这里项目地址代码是最基础的demo版本。在项目使用过程又改了许多bug。这里就不更新了。<br>在实际项目开发中，当video停止播放(不是暂停)之后，video依旧在加载video资源。这样会导致不必要的资源浪费。经过实践可通过以下方式解决    </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">audio.pause();   </span><br><span class="line">audio.src = <span class="string">""</span>; </span><br><span class="line">audio.load();</span><br></pre></td></tr></table></figure>
-<p>详细问题解决地址 <a href="http://stackoverflow.com/questions/4071872/html5-video-force-abort-of-buffering" target="_blank" rel="external">点这里</a></p>
+<p>搜索的本质，就是遍历各种可能性，然后通过一些奇淫巧技排除一些可能性，我们俗称剪枝。剪枝的优劣，直接影响到算法性能。<br>问它能解决什么问题呢？它能解决所有问题，因为它枚举了所有可能性。只不过需要大量的剪枝技巧来优化性能。<br>举个栗子：你在一个小区里找一个人，但是你又不知道他具体住哪里？那最土的办法就是挨家挨户的找。这个就是搜索，当你明确知道他不在某栋楼里的时候，你就不用搜索这栋楼了。这个就叫剪枝。<br>很多时候，为了提高性能，但是又没有明确条件的时候，可以采用暴力剪枝。<br>还是那个找人的栗子，比如就只找奇数号楼。这样效率虽然高了不少，但是也有可能永远找不到正确答案。在实际运用中，暴力剪枝还是非常常见的。这是个取舍问题，比如保证正确率在80%就够了，或者找到近似答案就行了。<br>搜索是一种思想，所有它可以衍生出非常多具体的，针对某一些具体问题的算法。<br>常见的有：深度优先遍历（搜索），和广度优先遍历（搜索）。<br>给个结构树说明下：<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jcvazr0yj20fq0b0js5" alt=""><br>如果遍历顺序是<code>A,B,E,H</code>，这样的就是深度遍历。如果是<code>A,B,C,D</code>，这样遍历就是广度优先。这个时候就觉得大学的好好学习的重要性了，在实际开发中吃多少的亏啊！<br>本文篇(wo)幅(bi)有(jiao)限(lan)，只介绍下广度优先的搜索。<br>以上是一维平面下，其实二维平面也是一样的。只要理解其中的精髓，其实都一样的。<br>看图<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jd8agyckj20b006yq3d" alt=""><br>整个图可以看成xy的坐标系。那么人和门的位置就是坐标点。那人移动就变成了[-1,0],[1,0],[0,1],[0,-1]。 那么人要找到出口就是，枚举四个方向，然后移动，然后再枚举四个方向。终有一天，是能找到出口的。<br>然后在这个基础上增加难度，就是增加障碍物。像这样<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jdg5h2lkj20b605sjri" alt="">，这样子人就只能从墙的两边绕过去。这样其实也就是在判断的时候增加了几个判断条件而已。</p>
+<p>最后给一个可以demo，源码源码就在页面上。<a href="http://flyovergu.github.io/labs/prisonBreak/index.html">地址</a></p>
 
       
     </div>
@@ -260,18 +231,9 @@ autoplay    如果出现该属性，则视频在就绪后马">
     
 <nav id="article-nav">
   
-    <a href="/2016/04/23/消消乐demo/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          消消乐demo
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/09/当你不知道干什么的时候，可以看看这些/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">当你不知道干什么的时候，可以看看这些</div>
+    <a href="/2016/05/28/connect源码解读/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">connect实现原理</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -287,7 +249,7 @@ autoplay    如果出现该属性，则视频在就绪后马">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="积累和经验 html5 video player" data-title="积累和经验 html5 video player" data-url="http://flyovergu.github.io/2016/04/17/积累和经验 html5 video player/"></div>
+	<div class="ds-thread" data-thread-key="搜索算法" data-title="搜索算法" data-url="http://flyovergu.github.io/2016/06/04/搜索算法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
