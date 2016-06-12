@@ -122,6 +122,16 @@ const _reset = function() {
         .removeClass('wall')
         .removeClass('key')
         .removeClass('door')
+        .removeClass('key-1')
+        .removeClass('door-1')
+        .removeClass('key-2')
+        .removeClass('door-2')
+        .removeClass('key-3')
+        .removeClass('door-3')
+        .removeClass('key-4')
+        .removeClass('door-4')
+        .removeClass('key-5')
+        .removeClass('door-5')
         .removeClass('people');
 }
 
