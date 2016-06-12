@@ -105,7 +105,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/chrome/" style="font-size: 15px;">chrome</a> <a href="/tags/devTool/" style="font-size: 15px;">devTool</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/不为人知/" style="font-size: 10px;">不为人知</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/小游戏/" style="font-size: 15px;">小游戏</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心得/" style="font-size: 10px;">心得</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/源码/" style="font-size: 15px;">源码</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a>
+						<a href="/tags/chrome/" style="font-size: 15px;">chrome</a> <a href="/tags/devTool/" style="font-size: 15px;">devTool</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/不为人知/" style="font-size: 10px;">不为人知</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/小游戏/" style="font-size: 15px;">小游戏</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心得/" style="font-size: 10px;">心得</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/源码/" style="font-size: 15px;">源码</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a>
 					</div>
 				</section>
 				
@@ -170,6 +170,75 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-手把手教你配置nginx反向代理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/12/手把手教你配置nginx反向代理/" class="article-date">
+  	<time datetime="2016-06-12T02:09:13.000Z" itemprop="datePublished">2016-06-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/12/手把手教你配置nginx反向代理/">手把手教你配置nginx</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>nginx本身是一个性能非常好的轻量级服务器，基本上已经把硬件资源发挥到极致。它有几大特点：更快，高拓展性，高可靠性，低内存消耗，单机支持10w以上并发，热部署。其实总结下，就是nginx非常好用高效。   </p>
+</blockquote>
+<p>本文只介绍nginx简单的使用，并且主要是解决前端开发本地代理问题。也就是说不涉及到高并发和性能问题的配置，只是最简单的反向代理配置。</p>
+<p>首先抄一段我们常用的配置    </p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> xx.superboss.cc;</span><br><span class="line">    <span class="attribute">charset</span> utf-<span class="number">8</span>;</span><br><span class="line">    <span class="attribute">index</span> /index.xhtml;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">location</span> <span class="regexp">~* ^.+\.(xls|woff2|log|jpg|jpeg|gif|png|ico|html|cfm|cfc|afp|asp|lasso|pl|py|txt|fla|swf|zip)$</span> &#123;</span><br><span class="line">        <span class="attribute">root</span> /Users/xxx/static; <span class="comment">#代理静态文件到本地</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">location</span> <span class="regexp">~* ^.+\.(json|js|css|less)$</span> &#123;</span><br><span class="line">        <span class="comment">#root /Users/xxx/static; #代理静态文件到本地</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">            <span class="attribute">proxy_pass</span> <span class="variable">$scheme</span>://<span class="variable">$host</span><span class="variable">$request_uri</span>; <span class="comment">#代理请求到线上</span></span><br><span class="line">            <span class="attribute">proxy_set_header</span> Host <span class="variable">$http_host</span>; <span class="comment">#设置打理请求头信息</span></span><br><span class="line">            <span class="comment">#proxy_pass http://127.0.0.1:8888; #也可以直接指定ip端口</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一个server就是一个虚拟主机，一个主机可以配置监听的端口<code>listen</code>和域名<code>server_name</code>，多个<code>location</code>来处理具体的请求。   </p>
+<ol>
+<li>listen参数决定nginx服务如何监听端口。在listen后可以只加IP地址、端口或主机 名，非常灵活。   </li>
+<li>server_name后可以跟多个主机名称。当开始处理一个http请求时，nginx会取出请求头中的host信息，和每个server_name进行比对，以此来确定由那个server来处理请求。   </li>
+<li>location会尝试根据用户请求中的URI来匹配上面的/uri表达式，如果可以匹配，就选择location{}块中的配置来处理用户请求。location在匹配的时候有如下规则：      </li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">location  = / &#123;</span><br><span class="line">  # 只匹配"/".</span><br><span class="line">  [ configuration A ] </span><br><span class="line">&#125;</span><br><span class="line">location  / &#123;</span><br><span class="line">  # 匹配任何请求，因为所有请求都是以"/"开始</span><br><span class="line">  # 但是更长字符匹配或者正则表达式匹配会优先匹配</span><br><span class="line">  [ configuration B ] </span><br><span class="line">&#125;</span><br><span class="line">location ^~ /images/ &#123;</span><br><span class="line">  # 匹配任何以 /images/ 开始的请求，并停止匹配 其它location</span><br><span class="line">  [ configuration C ] </span><br><span class="line">&#125;</span><br><span class="line">location ~* .(gif|jpg|jpeg)$ &#123;</span><br><span class="line">  # 匹配以 gif, jpg, or jpeg结尾的请求. </span><br><span class="line">  # 但是所有 /images/ 目录的请求将由 [Configuration C]处理.   </span><br><span class="line">  [ configuration D ] </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-搜索算法" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -805,74 +874,10 @@
 
 
   
-    <article id="post-vim 小技巧" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/04/05/vim 小技巧/" class="article-date">
-  	<time datetime="2016-04-05T12:53:37.000Z" itemprop="datePublished">2016-04-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/05/vim 小技巧/">vim 小技巧</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h3><p>主要自己记录一下，方便自己下次查找方便</p>
-<ol>
-<li>mac 命令行下共享系统剪切板, 剪切<code>:!pbcopy</code>, 粘贴<code>:r !pbpaste</code>。</li>
-<li>cw:删除一个单词并进入插入模式,cc:删除一行并进入插入模式。</li>
-<li>r:然后输入的字母将替换当前字母并保持命令模式,R则是不停的替换(一个挨着一个)。</li>
-</ol>
-<h3 id="插件系列"><a href="#插件系列" class="headerlink" title="插件系列"></a>插件系列</h3><p>特别常用的插件就不介绍了。<br>介绍一些不太热门，但是非常好用的插件。</p>
-<ol>
-<li><a href="https://github.com/kien/ctrlp.vim" target="_blank" rel="external">ctrlP</a> 在指定目录中快速查找文件，并且打开文件。支持批量。</li>
-<li><a href="https://github.com/heavenshell/vim-jsdoc" target="_blank" rel="external">JsDoc</a> 生成函数文档，支持最新es 6函数。</li>
-<li><a href="https://github.com/kshenoy/vim-signature" target="_blank" rel="external">vimSignature</a> 加强mark插件，超级强大。还支持文件间跳转。</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editor/">editor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
