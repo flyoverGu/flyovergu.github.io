@@ -105,7 +105,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/chrome/" style="font-size: 15px;">chrome</a> <a href="/tags/devTool/" style="font-size: 15px;">devTool</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/不为人知/" style="font-size: 10px;">不为人知</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/小游戏/" style="font-size: 15px;">小游戏</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心得/" style="font-size: 10px;">心得</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/源码/" style="font-size: 15px;">源码</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a>
+						<a href="/tags/chrome/" style="font-size: 15px;">chrome</a> <a href="/tags/devTool/" style="font-size: 15px;">devTool</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/不为人知/" style="font-size: 10px;">不为人知</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/小游戏/" style="font-size: 15px;">小游戏</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心得/" style="font-size: 10px;">心得</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/源码/" style="font-size: 15px;">源码</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a>
 					</div>
 				</section>
 				
@@ -170,6 +170,73 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-理解linux下文件权限问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/19/理解linux下文件权限问题/" class="article-date">
+  	<time datetime="2016-06-19T09:48:42.000Z" itemprop="datePublished">2016-06-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/19/理解linux下文件权限问题/">理解linux下文件权限问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>在我们开发的过程经常遇到<code>Permission denied</code>，权限不足。于是我们就用<code>sudo xxx</code>来解决这个问题。但是为什么会权限不足？权限不足的原因是什么？</p>
+</blockquote>
+<ol>
+<li><p>文件权限<br>在某目录下执行<code>ls -al</code>，可以看到一连串当前目录下文件或者文件夹的信息。像这样<img src="http://ww4.sinaimg.cn/large/72f96cbagw1f50pq6557ij21160gcn15" alt="">其中就以圈起来文件做个介绍。<br><code>drwxr-xr-x  43 flyover  staff   1.4K Jun 17 16:44 fly</code><br><code>drwxr-xr-x</code>表示文件权限，第一个字母<code>d</code>表示文件夹，类似的还是<code>l</code>表示连接文件等。后面以三个字母为一组，分别是<code>rwx</code>,<code>r-x</code>,<code>r-x</code>表示第一组是owner的权限，第二组是group的权限，第三组是other的权限。其中<code>r</code>表示读权限，<code>w</code>表示写权限，<code>x</code>表示执行权限。<br><code>43</code>表示连接数。表示整个文件树中有多少个文件，与此文件连接。通俗的讲就是如果是文件的话就是1，如果是文件夹的话，表示下面有多少个文件。<br><code>flyover</code>就是文件owner。<br><code>staff</code>文件所属的文件组。<br><code>1.4k</code>表示文件大小。<br><code>Jun 7 16:44</code>表示最后修改时间。<br><code>fly</code>文件名。   </p>
+</li>
+<li><p>命令<br>修改文件属性的几个命令<br><code>chgrp</code>：改变文件所属的组。<br><code>chown</code>：文件owner。即修改拥有者。<br><code>chmod</code>：修改文件权限。</p>
+</li>
+<li><p>实际问题<br>当我们遇到用户权限不够的时候，可以查看文件的权限。然后用对应的命令修改文件属性。<br>比如我之前遇到nginx的user是www。但是我的项目在root下，这时nginx访问静态文件的时候，会出现<code>403 Forbidden</code>的错误。这个时候有两方式解决这个问题，第一可以修改项目的位置，把项目移到www的用户目录下去。第二可以修改项目的group属性。还有一种就是修改文件的<code>rwx</code>权限，让任何人都能访问到。</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/权限/">权限</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-手把手教你配置nginx反向代理" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -794,65 +861,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/导航/">导航</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/精华/">精华</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-简单html模版实现" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/07/简单html模版实现/" class="article-date">
-  	<time datetime="2016-04-07T13:44:07.000Z" itemprop="datePublished">2016-04-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/07/简单html模版实现/">简单html模版实现</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,<br>但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。<br>我们只需要简单的if else，和一些变量替换。<br>然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  </p>
-<h2 id="功能-amp-使用"><a href="#功能-amp-使用" class="headerlink" title="功能&amp;使用"></a>功能&amp;使用</h2><p>支持 <code>if for else seitch case break</code> 等<br>使用起来非常简单。<br>源码解析如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function tkTemplate(select, data) &#123;</span><br><span class="line">    // 模版</span><br><span class="line">    var tp = $(select).html();</span><br><span class="line">    // 自定义识别区域 &lt;%code%&gt;</span><br><span class="line">    var re = /&lt;%([^%&gt;]+)?%&gt;/g;</span><br><span class="line">    // 能识别的代码 </span><br><span class="line">    var reCode = /(^( )?(if|for|else|switch|case|break|&#123;|&#125;))(.*)?/g;</span><br><span class="line">    // 最后执行的code</span><br><span class="line">    var code = &apos;var r = [];\n&apos;;</span><br><span class="line">    // 识别的位置</span><br><span class="line">    var cursor = 0;</span><br><span class="line">    // 把识别到的文本，加到code中</span><br><span class="line">    var add = function(line, js) &#123;</span><br><span class="line">        js ? (code += line.match(reCode) ? line + &apos;\n&apos; : &apos;r.push(&apos; + line + &apos;);\n&apos;) :</span><br><span class="line">        (code += line != &apos;&apos; ? &apos;r.push(&quot;&apos; + line.replace(/&quot;/g, &apos;\\&quot;&apos;) + &apos;&quot;);\n&apos; : &apos;&apos;);</span><br><span class="line">        return add;</span><br><span class="line">    &#125;</span><br><span class="line">    // 全文中找关键字</span><br><span class="line">    while (match = re.exec(tp)) &#123;</span><br><span class="line">        // 把识别到的关键字之前的文本放入code，并且把关键字也放入code</span><br><span class="line">        add(tp.slice(cursor, match.index))(match[1], true);</span><br><span class="line">        // 改变游标位置</span><br><span class="line">        cursor = match.index + match[0].length;</span><br><span class="line">    &#125;</span><br><span class="line">    add(tp.substr(cursor, tp.length - cursor));</span><br><span class="line">    code += &apos;return r.join(&quot;&quot;);&apos;;</span><br><span class="line">    // 执行code</span><br><span class="line">    return new Function(code.replace(/[\r\t\n]/g, &apos;&apos;)).apply(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/template/">template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/源码/">源码</a></li></ul>
 	</div>
 
       
