@@ -4,24 +4,79 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>简单html模版实现 | 他好像一条狗</title>
+  <title>spa静态化输出 | 他好像一条狗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背景当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。我们只需要简单的if else，和一些变量替换。然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  
-功能&amp;amp;使用支持 if for else seitch case break 等使用起来非常简单。源码解析如下
-1">
+  <meta name="description" content="上周分享的的ppt，markdown版。主要表明公司之后在spa静态化输出道路上的方向。下面是ppt源码
+
+[slide]
+#spa前端框架静态化输出
+[slide]
+
+什么是spa框架静态输出?
+静态化解决了我们什么问题？
+静态化怎么实现？
+实现过程中有哪些困难点？  
+
+
+[slide]
+#中间层&amp;amp;SEO
+[slide]
+
+[slide]
+#看看我厂的原子弹Tatami
+[slide">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单html模版实现">
-<meta property="og:url" content="http://flyovergu.github.io/2016/04/07/简单html模版实现/index.html">
+<meta property="og:title" content="spa静态化输出">
+<meta property="og:url" content="http://flyovergu.github.io/2016/06/26/spa静态化输出/index.html">
 <meta property="og:site_name" content="他好像一条狗">
-<meta property="og:description" content="背景当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。我们只需要简单的if else，和一些变量替换。然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  
-功能&amp;amp;使用支持 if for else seitch case break 等使用起来非常简单。源码解析如下
-1">
-<meta property="og:updated_time" content="2016-04-17T13:58:35.000Z">
+<meta property="og:description" content="上周分享的的ppt，markdown版。主要表明公司之后在spa静态化输出道路上的方向。下面是ppt源码
+
+[slide]
+#spa前端框架静态化输出
+[slide]
+
+什么是spa框架静态输出?
+静态化解决了我们什么问题？
+静态化怎么实现？
+实现过程中有哪些困难点？  
+
+
+[slide]
+#中间层&amp;amp;SEO
+[slide]
+
+[slide]
+#看看我厂的原子弹Tatami
+[slide">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/72f96cbagw1f56ezyiggaj204e04gt8q">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/72f96cbagw1f56fek8kd2j20u40hun0p">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/72f96cbagw1f578qsxx3nj20ls04eweq">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/72f96cbagw1f56fgv4facj20hi0i8abc">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/72f96cbagw1f56g9vb2y0j20jk0is762">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/72f96cbagw1f578m72k6ej20s609cdgv">
+<meta property="og:updated_time" content="2016-06-26T04:15:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单html模版实现">
-<meta name="twitter:description" content="背景当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。我们只需要简单的if else，和一些变量替换。然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  
-功能&amp;amp;使用支持 if for else seitch case break 等使用起来非常简单。源码解析如下
-1">
+<meta name="twitter:title" content="spa静态化输出">
+<meta name="twitter:description" content="上周分享的的ppt，markdown版。主要表明公司之后在spa静态化输出道路上的方向。下面是ppt源码
+
+[slide]
+#spa前端框架静态化输出
+[slide]
+
+什么是spa框架静态输出?
+静态化解决了我们什么问题？
+静态化怎么实现？
+实现过程中有哪些困难点？  
+
+
+[slide]
+#中间层&amp;amp;SEO
+[slide]
+
+[slide]
+#看看我厂的原子弹Tatami
+[slide">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/72f96cbagw1f56ezyiggaj204e04gt8q">
   
   
     <link rel="icon" href="http://7xp1l3.com1.z0.glb.clouddn.com/avatar.jpg">
@@ -176,11 +231,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-简单html模版实现" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-spa静态化输出" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/07/简单html模版实现/" class="article-date">
-  	<time datetime="2016-04-07T13:44:07.000Z" itemprop="datePublished">2016-04-07</time>
+      <a href="/2016/06/26/spa静态化输出/" class="article-date">
+  	<time datetime="2016-06-26T04:13:14.000Z" itemprop="datePublished">2016-06-26</time>
 </a>
     </div>
   
@@ -193,7 +248,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      简单html模版实现
+      spa静态化输出
     </h1>
   
 
@@ -202,7 +257,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/template/">template</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/源码/">源码</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/seo/">seo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spa/">spa</a></li></ul>
 	</div>
 
         
@@ -213,9 +268,70 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当在一些需要动态渲染html的页面时候，我们一般会选择一些html模版库来做这个事,<br>但是又觉得现有的handlebars、mustcache等又太庞大，压根用不那么多功能。<br>我们只需要简单的if else，和一些变量替换。<br>然后在寻寻觅觅之后，找到了一个非常精巧的一个模版。  </p>
-<h2 id="功能-amp-使用"><a href="#功能-amp-使用" class="headerlink" title="功能&amp;使用"></a>功能&amp;使用</h2><p>支持 <code>if for else seitch case break</code> 等<br>使用起来非常简单。<br>源码解析如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function tkTemplate(select, data) &#123;</span><br><span class="line">    // 模版</span><br><span class="line">    var tp = $(select).html();</span><br><span class="line">    // 自定义识别区域 &lt;%code%&gt;</span><br><span class="line">    var re = /&lt;%([^%&gt;]+)?%&gt;/g;</span><br><span class="line">    // 能识别的代码 </span><br><span class="line">    var reCode = /(^( )?(if|for|else|switch|case|break|&#123;|&#125;))(.*)?/g;</span><br><span class="line">    // 最后执行的code</span><br><span class="line">    var code = &apos;var r = [];\n&apos;;</span><br><span class="line">    // 识别的位置</span><br><span class="line">    var cursor = 0;</span><br><span class="line">    // 把识别到的文本，加到code中</span><br><span class="line">    var add = function(line, js) &#123;</span><br><span class="line">        js ? (code += line.match(reCode) ? line + &apos;\n&apos; : &apos;r.push(&apos; + line + &apos;);\n&apos;) :</span><br><span class="line">        (code += line != &apos;&apos; ? &apos;r.push(&quot;&apos; + line.replace(/&quot;/g, &apos;\\&quot;&apos;) + &apos;&quot;);\n&apos; : &apos;&apos;);</span><br><span class="line">        return add;</span><br><span class="line">    &#125;</span><br><span class="line">    // 全文中找关键字</span><br><span class="line">    while (match = re.exec(tp)) &#123;</span><br><span class="line">        // 把识别到的关键字之前的文本放入code，并且把关键字也放入code</span><br><span class="line">        add(tp.slice(cursor, match.index))(match[1], true);</span><br><span class="line">        // 改变游标位置</span><br><span class="line">        cursor = match.index + match[0].length;</span><br><span class="line">    &#125;</span><br><span class="line">    add(tp.substr(cursor, tp.length - cursor));</span><br><span class="line">    code += &apos;return r.join(&quot;&quot;);&apos;;</span><br><span class="line">    // 执行code</span><br><span class="line">    return new Function(code.replace(/[\r\t\n]/g, &apos;&apos;)).apply(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>上周分享的的ppt，markdown版。主要表明公司之后在spa静态化输出道路上的方向。<br>下面是ppt源码</p>
+</blockquote>
+<p>[slide]</p>
+<p>#spa前端框架静态化输出</p>
+<p>[slide]</p>
+<ol>
+<li>什么是spa框架静态输出?</li>
+<li>静态化解决了我们什么问题？</li>
+<li>静态化怎么实现？</li>
+<li>实现过程中有哪些困难点？  </li>
+</ol>
+<p><img src="http://ww2.sinaimg.cn/large/72f96cbagw1f56ezyiggaj204e04gt8q" alt=""></p>
+<p>[slide]</p>
+<p>#中间层&amp;SEO</p>
+<p>[slide]</p>
+<p><img src="http://ww4.sinaimg.cn/large/72f96cbagw1f56fek8kd2j20u40hun0p" alt=""></p>
+<p>[slide]</p>
+<p>#看看我厂的原子弹<strong><em>Tatami</em></strong></p>
+<p>[slide]</p>
+<p>Tatami的路由<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#/detail?id=xx =&gt; detailModule</span><br><span class="line"></span><br><span class="line">/detail.html?id=xx</span><br></pre></td></tr></table></figure></p>
+<p>[slide]</p>
+<p>Tatami模块之间的关系<br><img src="http://ww3.sinaimg.cn/large/72f96cbagw1f578qsxx3nj20ls04eweq" alt=""></p>
+<p>[slide]</p>
+<p>Tatami框架生命周期<br><img src="http://ww3.sinaimg.cn/large/72f96cbagw1f56fgv4facj20hi0i8abc" alt=""></p>
+<p>[slide]</p>
+<p>实现静态化需要解决哪些问题？</p>
+<ol>
+<li>对应路由能打开对应模块的静态化文件</li>
+<li>静态化文件能完成用户交互操作</li>
+</ol>
+<p><strong><em>那么怎么做？</em></strong></p>
+<p>[slide]</p>
+<p>想法很多。。。。<br>感觉条条大路通罗马</p>
+<p>[slide]</p>
+<p>然而。。<br>我们遇到了不可描述的问题</p>
+<p>[slide]</p>
+<p>新瓶装老酒<br><img src="http://ww3.sinaimg.cn/large/72f96cbagw1f56g9vb2y0j20jk0is762" alt=""></p>
+<p>[slide]</p>
+<p>分两大块实现  </p>
+<ol>
+<li>预处理modules，处理成node能识别的文件</li>
+<li>node接受请求，返回静态文件(中间层)</li>
+</ol>
+<p>[slide]</p>
+<p><img src="http://ww1.sinaimg.cn/large/72f96cbagw1f578m72k6ej20s609cdgv" alt=""></p>
+<p>[slide]</p>
+<p>预编译成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    mvtList: &#123;</span><br><span class="line">        detail: ()=&gt; &#123;&#125;</span><br><span class="line">        xxx: xx</span><br><span class="line">    &#125;,</span><br><span class="line">    basicMvt: () =&gt; &#123;&#125;,</span><br><span class="line">    basicNameList: [&apos;footer&apos;, &apos;header&apos;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>[slide]</p>
+<p>中间层<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(moduleName, hashs, done) =&gt; &#123;</span><br><span class="line">    defineModule(moduleName);</span><br><span class="line">    initModule(moduleName, hashs); // init main view</span><br><span class="line">    let html = renderHtml(moduleName); // request, update view</span><br><span class="line">    </span><br><span class="line">    // async</span><br><span class="line">    done(html);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>[slide]</p>
+<p>最后<br>遇到了好多坑啊~</p>
+<ol>
+<li>服务器端界面渲染</li>
+<li>node的异步请求</li>
+<li>UI组件初始化</li>
+<li>替换原来的hash url</li>
+<li>时间</li>
+<li>xxx</li>
+</ol>
+<p>[slide]</p>
+<p>#DEMO</p>
+<p>[slide]</p>
+<p>#QA</p>
 
       
     </div>
@@ -225,18 +341,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/09/当你不知道干什么的时候，可以看看这些/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          当你不知道干什么的时候，可以看看这些
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/05/vim 小技巧/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vim 小技巧</div>
+    <a href="/2016/06/19/理解linux下文件权限问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">理解linux下文件权限问题</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -252,7 +359,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="简单html模版实现" data-title="简单html模版实现" data-url="http://flyovergu.github.io/2016/04/07/简单html模版实现/"></div>
+	<div class="ds-thread" data-thread-key="spa静态化输出" data-title="spa静态化输出" data-url="http://flyovergu.github.io/2016/06/26/spa静态化输出/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
