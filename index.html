@@ -211,57 +211,6 @@
 </ol>
 <p><img src="http://ww2.sinaimg.cn/large/72f96cbagw1f56ezyiggaj204e04gt8q" alt=""></p>
 <p>[slide]</p>
-<p>#中间层&amp;SEO</p>
-<p>[slide]</p>
-<p><img src="http://ww4.sinaimg.cn/large/72f96cbagw1f56fek8kd2j20u40hun0p" alt=""></p>
-<p>[slide]</p>
-<p>#看看我厂的原子弹<strong><em>Tatami</em></strong></p>
-<p>[slide]</p>
-<p>Tatami的路由<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#/detail?id=xx =&gt; detailModule</span><br><span class="line"></span><br><span class="line">/detail.html?id=xx</span><br></pre></td></tr></table></figure></p>
-<p>[slide]</p>
-<p>Tatami模块之间的关系<br><img src="http://ww3.sinaimg.cn/large/72f96cbagw1f578qsxx3nj20ls04eweq" alt=""></p>
-<p>[slide]</p>
-<p>Tatami框架生命周期<br><img src="http://ww3.sinaimg.cn/large/72f96cbagw1f56fgv4facj20hi0i8abc" alt=""></p>
-<p>[slide]</p>
-<p>实现静态化需要解决哪些问题？</p>
-<ol>
-<li>对应路由能打开对应模块的静态化文件</li>
-<li>静态化文件能完成用户交互操作</li>
-</ol>
-<p><strong><em>那么怎么做？</em></strong></p>
-<p>[slide]</p>
-<p>想法很多。。。。<br>感觉条条大路通罗马</p>
-<p>[slide]</p>
-<p>然而。。<br>我们遇到了不可描述的问题</p>
-<p>[slide]</p>
-<p>新瓶装老酒<br><img src="http://ww3.sinaimg.cn/large/72f96cbagw1f56g9vb2y0j20jk0is762" alt=""></p>
-<p>[slide]</p>
-<p>分两大块实现  </p>
-<ol>
-<li>预处理modules，处理成node能识别的文件</li>
-<li>node接受请求，返回静态文件(中间层)</li>
-</ol>
-<p>[slide]</p>
-<p><img src="http://ww1.sinaimg.cn/large/72f96cbagw1f578m72k6ej20s609cdgv" alt=""></p>
-<p>[slide]</p>
-<p>预编译成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    mvtList: &#123;</span><br><span class="line">        detail: ()=&gt; &#123;&#125;</span><br><span class="line">        xxx: xx</span><br><span class="line">    &#125;,</span><br><span class="line">    basicMvt: () =&gt; &#123;&#125;,</span><br><span class="line">    basicNameList: [&apos;footer&apos;, &apos;header&apos;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>[slide]</p>
-<p>中间层<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(moduleName, hashs, done) =&gt; &#123;</span><br><span class="line">    defineModule(moduleName);</span><br><span class="line">    initModule(moduleName, hashs); // init main view</span><br><span class="line">    let html = renderHtml(moduleName); // request, update view</span><br><span class="line">    </span><br><span class="line">    // async</span><br><span class="line">    done(html);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>[slide]</p>
-<p>最后<br>遇到了好多坑啊~</p>
-<ol>
-<li>服务器端界面渲染</li>
-<li>node的异步请求</li>
-<li>UI组件初始化</li>
-<li>替换原来的hash url</li>
-<li>时间</li>
-<li>xxx</li>
-</ol>
-<p>[slide]</p>
-<p>#DEMO</p>
-<p>[slide]</p>
-<p>#QA</p>
-
       
     </div>
     
@@ -274,6 +223,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/26/spa静态化输出/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
