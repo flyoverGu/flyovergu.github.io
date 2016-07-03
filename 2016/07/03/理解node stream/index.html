@@ -4,27 +4,32 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>A star 寻路算法 | 他好像一条狗</title>
+  <title>理解node stream | 他好像一条狗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本上就是在最短路算法上，增加了优先对列或者叫评估函数。其作用就是有方向性的寻找目标，去掉那些一定不正确的路。以此达到性能上的优化。
-看看demo, 黑色点是开始点，红色是墙，白色是目标节点。
-贴一下关键代码，源码在demo中都有。  
-123456789101112131415161718192021222324252627282930313233343536373839404142434445">
+  <meta name="description" content="学好node，学好stream。stream就是流。基本上大大小小的node程序都用到了stream。
+
+stream的官方教程在这里，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。
+先看个node读文件的例子：   
+123fs.readFile(&amp;apos;./ss.js&amp;apos;, (err, data) =&amp;gt; &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A star 寻路算法">
-<meta property="og:url" content="http://flyovergu.github.io/2016/05/07/A star 寻路算法/index.html">
+<meta property="og:title" content="理解node stream">
+<meta property="og:url" content="http://flyovergu.github.io/2016/07/03/理解node stream/index.html">
 <meta property="og:site_name" content="他好像一条狗">
-<meta property="og:description" content="基本上就是在最短路算法上，增加了优先对列或者叫评估函数。其作用就是有方向性的寻找目标，去掉那些一定不正确的路。以此达到性能上的优化。
-看看demo, 黑色点是开始点，红色是墙，白色是目标节点。
-贴一下关键代码，源码在demo中都有。  
-123456789101112131415161718192021222324252627282930313233343536373839404142434445">
-<meta property="og:updated_time" content="2016-05-09T04:04:02.000Z">
+<meta property="og:description" content="学好node，学好stream。stream就是流。基本上大大小小的node程序都用到了stream。
+
+stream的官方教程在这里，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。
+先看个node读文件的例子：   
+123fs.readFile(&amp;apos;./ss.js&amp;apos;, (err, data) =&amp;gt; &amp;">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNbRwgw1f5h10vvncoj30rm0auwfx">
+<meta property="og:updated_time" content="2016-07-03T13:14:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A star 寻路算法">
-<meta name="twitter:description" content="基本上就是在最短路算法上，增加了优先对列或者叫评估函数。其作用就是有方向性的寻找目标，去掉那些一定不正确的路。以此达到性能上的优化。
-看看demo, 黑色点是开始点，红色是墙，白色是目标节点。
-贴一下关键代码，源码在demo中都有。  
-123456789101112131415161718192021222324252627282930313233343536373839404142434445">
+<meta name="twitter:title" content="理解node stream">
+<meta name="twitter:description" content="学好node，学好stream。stream就是流。基本上大大小小的node程序都用到了stream。
+
+stream的官方教程在这里，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。
+先看个node读文件的例子：   
+123fs.readFile(&amp;apos;./ss.js&amp;apos;, (err, data) =&amp;gt; &amp;">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/006tNbRwgw1f5h10vvncoj30rm0auwfx">
   
   
     <link rel="icon" href="http://7xp1l3.com1.z0.glb.clouddn.com/avatar.jpg">
@@ -179,11 +184,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-A star 寻路算法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-理解node stream" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/07/A star 寻路算法/" class="article-date">
-  	<time datetime="2016-05-07T12:40:40.000Z" itemprop="datePublished">2016-05-07</time>
+      <a href="/2016/07/03/理解node stream/" class="article-date">
+  	<time datetime="2016-07-03T12:29:33.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     </div>
   
@@ -196,7 +201,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      A star 寻路算法
+      理解node stream
     </h1>
   
 
@@ -205,7 +210,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小游戏/">小游戏</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-pipe-stream/">-node -pipe -stream</a></li></ul>
 	</div>
 
         
@@ -216,10 +221,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>基本上就是在最短路算法上，增加了优先对列或者叫评估函数。其作用就是有方向性的寻找目标，去掉那些一定不正确的路。以此达到性能上的优化。</p>
-<p>看看<a href="http://flyovergu.github.io/labs/aStar/index.html">demo</a>, 黑色点是开始点，红色是墙，白色是目标节点。</p>
-<p>贴一下关键代码，源码在demo中都有。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">function g() &#123;</span><br><span class="line">    var start = &#123;</span><br><span class="line">        x: 3,</span><br><span class="line">        y: 1</span><br><span class="line">    &#125;;</span><br><span class="line">    var end = &#123;</span><br><span class="line">        x: 3,</span><br><span class="line">        y: 5</span><br><span class="line">    &#125;;</span><br><span class="line">    // 优先队列</span><br><span class="line">    var q = [],</span><br><span class="line">        now, hash = &#123;&#125;;</span><br><span class="line">    q.push(start);</span><br><span class="line">    while (now = q.pop()) &#123;</span><br><span class="line">        console.log(now.x, now.y);</span><br><span class="line">        if (hash[now.x + &apos;&apos; + now.y]) &#123;</span><br><span class="line">            // 已经走过了 </span><br><span class="line">            continue;</span><br><span class="line">        &#125;</span><br><span class="line">        if (now.x &lt; 0 || now.x &gt;= H || now.y &lt; 0 || now.y &gt;= W) &#123;</span><br><span class="line">            // 超出地图了</span><br><span class="line">            continue;</span><br><span class="line">        &#125;</span><br><span class="line">        if (!~map[now.x][now.y]) &#123;</span><br><span class="line">            // 撞墙了</span><br><span class="line">            continue;</span><br><span class="line">        &#125;</span><br><span class="line">        if (now.x == end.x &amp;&amp; now.y == end.y) &#123;</span><br><span class="line">            console.log(&apos;found&apos;);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        map[now.x][now.y] = 1;</span><br><span class="line">        hash[now.x + &apos;&apos; + now.y] = true;</span><br><span class="line">        render();</span><br><span class="line">        $.map(dir, (i) =&gt; &#123;</span><br><span class="line">            var cx = now.x + i[0],</span><br><span class="line">                cy = now.y + i[1]</span><br><span class="line">            q.push(&#123;</span><br><span class="line">                x: cx,</span><br><span class="line">                y: cy,</span><br><span class="line">                v: h(&#123;</span><br><span class="line">                    x: cx,</span><br><span class="line">                    y: cy</span><br><span class="line">                &#125;, end)</span><br><span class="line">            &#125;);</span><br><span class="line">            //console.log(&apos;q&apos;, q);</span><br><span class="line">        &#125;);</span><br><span class="line">        q.sort((a, b) =&gt; &#123;</span><br><span class="line">            if (a.v &gt; b.v) return -1;</span><br><span class="line">            else return 1;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>学好node，学好stream。stream就是流。基本上大大小小的node程序都用到了stream。</p>
+</blockquote>
+<p>stream的官方教程在<a href="https://nodejs.org/api/stream.html" target="_blank" rel="external">这里</a>，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。</p>
+<p>先看个node读文件的例子：   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile(&apos;./ss.js&apos;, (err, data) =&gt; &#123;</span><br><span class="line">    console.log(data.toString());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>正常文件读取就是调用fs.readFile然后异步获取文件数据data。这种方式就是把文件的内容都读取出来，然后放在内存中操作。于是就会产生一个问题。当文件非常大的时候，读取出来放在内存中明显是不合适的。<br>那么怎么解决这个问题呢？<br>一个办法就是读取一部分数据，然后处理完之后，再读取一部分数据。这样不论文件有多大都能处理掉。<br>Stream就是这样的实现方式。改一下上面读文件的写法:    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let data;</span><br><span class="line">fs.createReadStream(&apos;./ss.js&apos;)</span><br><span class="line">    .on(&apos;data&apos;, chunk =&gt; &#123;</span><br><span class="line">        data += chunk;</span><br><span class="line">    &#125;)</span><br><span class="line">    .on(&apos;end&apos;, () =&gt; &#123;</span><br><span class="line">        console.log(data.toString());</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<p>用fs.createReadStream创建一个Stream对象。然后监听Stream对象的data和end事件。data事件会在读数据的时候触发，end事件会在数据读完之后触发。<br>然而上面的例子也是同样把所有的数据都读到了内容中然后输出。再改个写法：   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.createReadStream(&apos;./ss.js&apos;)</span><br><span class="line">    .on(&apos;data&apos;, chunk =&gt; &#123;</span><br><span class="line">        process.stdout.write(chunk);</span><br><span class="line">    &#125;)</span><br><span class="line">    .on(&apos;end&apos;, () =&gt; &#123;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<p>这样写就正真做到了按块处理数据。因为process.stdout是个WriteStream。可以把数据一块一块交给它处理。<br>当这样写的时候还有问题，就是当WriteStream处理速度比ReadStream慢的时候。就会出现上一个块数据还没处理好，下一块数据就来了。造成数据溢出。可以通过判断WriteStream.write的返回值。来暂停／开启读取，以此来控制速度。当然还有简单的方式那就是pipe。再改下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.createReadStream(&apos;./ss.js&apos;).pipe(process.stdout);</span><br></pre></td></tr></table></figure>
+<p>pipe内部实现了。读取数据速度的控制，保证丢失数据。</p>
+<p>最后给一个非常形象的pipe管道的图。<br><img src="http://ww4.sinaimg.cn/large/006tNbRwgw1f5h10vvncoj30rm0auwfx" alt=""><br>这是个双通道的管道，即可读又可写。</p>
 
       
     </div>
@@ -229,18 +244,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/15/哪些不为人知的实用chrome开发工具功能/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          哪些不为人知的实用chrome开发工具功能
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/23/消消乐demo/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">消消乐demo</div>
+    <a href="/2016/06/26/spa静态化输出/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">spa静态化输出</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -256,7 +262,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="A star 寻路算法" data-title="A star 寻路算法" data-url="http://flyovergu.github.io/2016/05/07/A star 寻路算法/"></div>
+	<div class="ds-thread" data-thread-key="理解node stream" data-title="理解node stream" data-url="http://flyovergu.github.io/2016/07/03/理解node stream/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
