@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/72f96cbagw1f5x6vu2tn4j21kw0ttacy.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/72f96cbagw1f5x81ud0nsg20xu0j87wo.gif">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/72f96cbagw1f5x8td9tx9g20z10johdv.gif">
-<meta property="og:updated_time" content="2016-07-17T14:08:15.000Z">
+<meta property="og:updated_time" content="2016-07-18T01:36:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="土拨鼠代理器功能介绍">
 <meta name="twitter:description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。
@@ -248,8 +248,7 @@
 <h3 id="代理静态文件"><a href="#代理静态文件" class="headerlink" title="代理静态文件"></a>代理静态文件</h3><p><img src="http://ww3.sinaimg.cn/large/72f96cbagw1f5x8td9tx9g20z10johdv.gif" alt=""><br>上面暂时了，在修改配置中增加配置。就可以代理到本地静态文件。配置mock数据路径，就可以代理到本地的mock数据。代理规则是支持正则表达式的，所以非常灵活。配置可以选择开启或者不开启，并且有多配置。</p>
 <h3 id="Mock数据编写"><a href="#Mock数据编写" class="headerlink" title="Mock数据编写"></a>Mock数据编写</h3><p>mock数据的编写是支持js语法的。实际上是一个js的function，传入参数。这意味着你可以根据自己传入的参数，模拟多种情况。并且返回数据。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(params)&#123;</span><br><span class="line">	 if (params.status) &#123;</span><br><span class="line">	 	retrn &#123;</span><br><span class="line">	 		resule: 100</span><br><span class="line">	 	&#125;</span><br><span class="line">	 &#125; else return &#123;</span><br><span class="line">        &quot;api_name&quot;:&quot;active_deleteActive&quot;,</span><br><span class="line">        &quot;data&quot;:&#123;</span><br><span class="line">            &quot;status&quot;: true</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;result&quot;:100</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p>最后放出项目地址 <a href="https://github.com/flyoverGu/groundhog" target="_blank" rel="external">git</a> 如果觉得还不错就star下！！！    </p>
-<p>打包后的版本好大，等我压缩后在上传下。</p>
+<h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p>最后放出项目地址 <a href="https://github.com/flyoverGu/groundhog" target="_blank" rel="external">git</a> 如果觉得还不错就star下！！！<br>打包后的文件在release page</p>
 
       
     </div>
