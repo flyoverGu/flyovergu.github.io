@@ -6,28 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>哪些不为人知的实用chrome debug技巧 | 他好像一条狗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这个跟上一篇chrome开发功能是姐妹篇，都是‘不为人知’系列。哈哈～这篇主要讲一下在debug过程中，使用到的实用技巧。当然也比较小众的技巧。
-
-
-编辑断点。chrome浏览器的debug本身做得非常程序员化，可以支持编辑断点。就是可以设置在什么情况下触发断点。这个功能当在循环语句中打断点的时候，非常有用！因为通常情况下并不是所有这个循环下的断点都要进。为了提高定位问题的速度，可以给断点增加一">
+  <meta name="description" content="这个跟上一篇chrome开发功能是姐妹篇，都是‘不为人知’系列。哈哈～这篇主要讲一下在debug过程中，使用到的实用技巧。当然也比较小众的技巧。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="哪些不为人知的实用chrome debug技巧">
 <meta property="og:url" content="http://flyovergu.github.io/2016/05/21/哪些不为人知的实用chrome debug技巧/index.html">
 <meta property="og:site_name" content="他好像一条狗">
-<meta property="og:description" content="这个跟上一篇chrome开发功能是姐妹篇，都是‘不为人知’系列。哈哈～这篇主要讲一下在debug过程中，使用到的实用技巧。当然也比较小众的技巧。
-
-
-编辑断点。chrome浏览器的debug本身做得非常程序员化，可以支持编辑断点。就是可以设置在什么情况下触发断点。这个功能当在循环语句中打断点的时候，非常有用！因为通常情况下并不是所有这个循环下的断点都要进。为了提高定位问题的速度，可以给断点增加一">
+<meta property="og:description" content="这个跟上一篇chrome开发功能是姐妹篇，都是‘不为人知’系列。哈哈～这篇主要讲一下在debug过程中，使用到的实用技巧。当然也比较小众的技巧。">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f43acbm60jj21kw0g8dkp">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f43ahfan8rj21ks0ion2o">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f43bb91ql3j21g60rsag3">
-<meta property="og:updated_time" content="2016-05-21T14:22:20.000Z">
+<meta property="og:updated_time" content="2016-07-25T08:19:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="哪些不为人知的实用chrome debug技巧">
-<meta name="twitter:description" content="这个跟上一篇chrome开发功能是姐妹篇，都是‘不为人知’系列。哈哈～这篇主要讲一下在debug过程中，使用到的实用技巧。当然也比较小众的技巧。
-
-
-编辑断点。chrome浏览器的debug本身做得非常程序员化，可以支持编辑断点。就是可以设置在什么情况下触发断点。这个功能当在循环语句中打断点的时候，非常有用！因为通常情况下并不是所有这个循环下的断点都要进。为了提高定位问题的速度，可以给断点增加一">
+<meta name="twitter:description" content="这个跟上一篇chrome开发功能是姐妹篇，都是‘不为人知’系列。哈哈～这篇主要讲一下在debug过程中，使用到的实用技巧。当然也比较小众的技巧。">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f43acbm60jj21kw0g8dkp">
   
   
@@ -238,6 +229,7 @@
         <blockquote>
 <p>这个跟上一篇chrome开发功能是姐妹篇，都是‘不为人知’系列。哈哈～<br>这篇主要讲一下在debug过程中，使用到的实用技巧。当然也比较小众的技巧。</p>
 </blockquote>
+<a id="more"></a>
 <ol>
 <li><p>编辑断点。chrome浏览器的debug本身做得非常程序员化，可以支持编辑断点。就是可以设置在什么情况下触发断点。这个功能当在循环语句中打断点的时候，非常有用！因为通常情况下并不是所有这个循环下的断点都要进。为了提高定位问题的速度，可以给断点增加一个条件，只有当条件语句为true时，才触发断点。<br> 看截图，在断点上右键，然后选Edit breakpoint<br><img src="http://ww2.sinaimg.cn/large/a15b4afegw1f43acbm60jj21kw0g8dkp" alt="编辑断点1"><br> 此时写条件语句，只有当条件语句为<code>true</code>时，才触发断点。<br><img src="http://ww2.sinaimg.cn/large/a15b4afegw1f43ahfan8rj21ks0ion2o" alt="编辑断点2"></p>
 </li>

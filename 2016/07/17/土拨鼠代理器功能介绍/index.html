@@ -6,26 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>土拨鼠代理器功能介绍 | 他好像一条狗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。
-
-干啥用在前后端分离的项目中，或者是客户端开发的过程中。前端往往需要一个后台才能启动，也就是我们常常在项目中看到的用node写的index.js。一个简单的服务器，">
+  <meta name="description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="土拨鼠代理器功能介绍">
 <meta property="og:url" content="http://flyovergu.github.io/2016/07/17/土拨鼠代理器功能介绍/index.html">
 <meta property="og:site_name" content="他好像一条狗">
-<meta property="og:description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。
-
-干啥用在前后端分离的项目中，或者是客户端开发的过程中。前端往往需要一个后台才能启动，也就是我们常常在项目中看到的用node写的index.js。一个简单的服务器，">
+<meta property="og:description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/72f96cbagw1f5x6teevbrj21kw0pu11k.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/72f96cbagw1f5x6vu2tn4j21kw0ttacy.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/72f96cbagw1f5x81ud0nsg20xu0j87wo.gif">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/72f96cbagw1f5x8td9tx9g20z10johdv.gif">
-<meta property="og:updated_time" content="2016-07-18T01:36:54.000Z">
+<meta property="og:updated_time" content="2016-07-25T08:20:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="土拨鼠代理器功能介绍">
-<meta name="twitter:description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。
-
-干啥用在前后端分离的项目中，或者是客户端开发的过程中。前端往往需要一个后台才能启动，也就是我们常常在项目中看到的用node写的index.js。一个简单的服务器，">
+<meta name="twitter:description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/72f96cbagw1f5x6teevbrj21kw0pu11k.jpg">
   
   
@@ -236,6 +230,7 @@
         <blockquote>
 <p>这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="干啥用"><a href="#干啥用" class="headerlink" title="干啥用"></a>干啥用</h2><p>在前后端分离的项目中，或者是客户端开发的过程中。前端往往需要一个后台才能启动，也就是我们常常在项目中看到的用node写的index.js。一个简单的服务器，主要是为了返回静态资源并且代理mock数据。  </p>
 <p>但是我经历过各种项目，发现个项目的启动方式都不相同，有的用nginx，有的用node，而且端口，启动的首页也都不相同。在我切换项目的开发的时候，发现好难啊。我要想很久，然后看看代码，才知道正确的打开姿势TT。有时候还要问问负责项目的老司机。  </p>
 <p>土拨鼠就是提供了前端项目本地开发的所需要的环境。配置好项目请求mock数据路径，配置好资源请求代理规则。同时可以多配置，完全是我辈福音啊。妈妈再也不用担心我多项目切换了。不论是手机，pc，千牛，都可以。</p>

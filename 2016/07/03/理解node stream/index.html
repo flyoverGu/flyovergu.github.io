@@ -8,27 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="学好node，学好stream。stream就是流。基本上大大小小的node程序都用到了stream。
 
-stream的官方教程在这里，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。
-先看个node读文件的例子：   
-123fs.readFile(&amp;apos;./ss.js&amp;apos;, (err, data) =&amp;gt; &amp;">
+stream的官方教程在这里，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="理解node stream">
 <meta property="og:url" content="http://flyovergu.github.io/2016/07/03/理解node stream/index.html">
 <meta property="og:site_name" content="他好像一条狗">
 <meta property="og:description" content="学好node，学好stream。stream就是流。基本上大大小小的node程序都用到了stream。
 
-stream的官方教程在这里，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。
-先看个node读文件的例子：   
-123fs.readFile(&amp;apos;./ss.js&amp;apos;, (err, data) =&amp;gt; &amp;">
+stream的官方教程在这里，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNbRwgw1f5h10vvncoj30rm0auwfx">
-<meta property="og:updated_time" content="2016-07-03T13:14:34.000Z">
+<meta property="og:updated_time" content="2016-07-25T08:20:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解node stream">
 <meta name="twitter:description" content="学好node，学好stream。stream就是流。基本上大大小小的node程序都用到了stream。
 
-stream的官方教程在这里，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。
-先看个node读文件的例子：   
-123fs.readFile(&amp;apos;./ss.js&amp;apos;, (err, data) =&amp;gt; &amp;">
+stream的官方教程在这里，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。">
 <meta name="twitter:image" content="http://ww4.sinaimg.cn/large/006tNbRwgw1f5h10vvncoj30rm0auwfx">
   
   
@@ -240,6 +234,7 @@ stream的官方教程在这里，本文就不重复介绍Stream中的API了。�
 <p>学好node，学好stream。stream就是流。基本上大大小小的node程序都用到了stream。</p>
 </blockquote>
 <p>stream的官方教程在<a href="https://nodejs.org/api/stream.html" target="_blank" rel="external">这里</a>，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。</p>
+<a id="more"></a>
 <p>先看个node读文件的例子：   </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile(&apos;./ss.js&apos;, (err, data) =&gt; &#123;</span><br><span class="line">    console.log(data.toString());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>正常文件读取就是调用fs.readFile然后异步获取文件数据data。这种方式就是把文件的内容都读取出来，然后放在内存中操作。于是就会产生一个问题。当文件非常大的时候，读取出来放在内存中明显是不合适的。<br>那么怎么解决这个问题呢？<br>一个办法就是读取一部分数据，然后处理完之后，再读取一部分数据。这样不论文件有多大都能处理掉。<br>Stream就是这样的实现方式。改一下上面读文件的写法:    </p>

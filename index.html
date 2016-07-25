@@ -217,21 +217,9 @@
 </blockquote>
 <p>首先先给出几个node写爬虫的几个简单教程   </p>
 <ol>
-<li><a href="https://github.com/alsotang/node-lessons/tree/master/lesson3" target="_blank" rel="external">使用 superagent 与 cheerio 完成简单爬虫</a>     </li>
-<li><a href="http://www.cnblogs.com/hustskyking/p/spider-with-node.html" target="_blank" rel="external">NodeJS写个爬虫，把文章放到kindle中阅读</a>   </li>
-<li><a href="http://blog.didispace.com/nodejspachong/" target="_blank" rel="external">使用Node.js制作爬虫教程</a></li>
-</ol>
-<p>想用node写爬虫的小白同学可以照着学一下。<br>然后我这边就主要讲一下爬虫思路。<br>所谓爬虫无非是要别人的网站页面上，获取到有价值的信息并保存下来。<br>那么流程上就成了：<img src="http://ww2.sinaimg.cn/large/006tNbRwgw1f665g34qsxj30jz04ojrt.jpg" alt=""><br>一个环节一个环节简单说下。除了数据分析，因为我不会。。。。  </p>
-<ol>
-<li>获取html就是用node发请求取获取指定网站上的html源码。在这个步骤上，还是有蛮多库可以选择的。当然也可用原生node的http库做这个事。 其他三方库也是蛮多的，比如：<a href="https://github.com/request/request" target="_blank" rel="external">request</a>, <a href="https://github.com/visionmedia/superagent" target="_blank" rel="external">superagent</a>,etc。<br><strong><em>这里需要注意的事</em></strong>， 当请求一下子发太多，因为网络问题，会导致大量请求失败。所以这里最好引入一个三方库（<a href="https://github.com/tj/co" target="_blank" rel="external">co</a>, <a href="https://github.com/caolan/async" target="_blank" rel="external">async</a>），来控制请求数。保证一下子请求不要太多。</li>
-<li>分析html。简单的可以直接用正则表达式，复杂的可以用<a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="external">cheerio</a>，这个库基本上就是node端的jquery。所以用jq获取页面的对应信息还是比较简单的。<br><strong><em>当然也有坑</em></strong>, 当直接能获取到html源码的网页，用这种方式当然可以了。但是想新浪微博之类的把html写在js代码里，需要运行js才能渲染出页面的网站。就是自己稍稍动动脑筋，用<code>eval</code>执行下js，还是能渲染页面的。但是如果遇到spa框架写的页面。那基本上就没戏了。<br>需要换方案解决，可以用<a href="http://phantomjs.org/" target="_blank" rel="external">phantomjs</a>之类的无头浏览器。正常访问页面，然后正常获取数据的方式来做。     </li>
-<li>保存数据基本上很简单了。自己玩玩的项目可以直接用fs写文件。大项目需要做数据分析的就放入数据库。</li>
-<li>分析大量数据。不会。。。。。。</li>
-</ol>
-<blockquote>
-<p>以上就是我对node爬虫的一些认识。</p>
-</blockquote>
-
+<li><a href="https://github.com/alsotang/node-lessons/tree/master/lesson3">使用 superagent 与 cheerio 完成简单爬虫</a>     </li>
+<li><a href="http://www.cnblogs.com/hustskyking/p/spider-with-node.html">NodeJS写个爬虫，把文章放到kindle中阅读</a>   </li>
+<li><a href="http://blog.didispace.com/nodejspachong/">使用Node.js制作爬虫教程</a>
       
     </div>
     
@@ -244,6 +232,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/25/node爬虫/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -290,20 +282,6 @@
         <blockquote>
 <p>这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。</p>
 </blockquote>
-<h2 id="干啥用"><a href="#干啥用" class="headerlink" title="干啥用"></a>干啥用</h2><p>在前后端分离的项目中，或者是客户端开发的过程中。前端往往需要一个后台才能启动，也就是我们常常在项目中看到的用node写的index.js。一个简单的服务器，主要是为了返回静态资源并且代理mock数据。  </p>
-<p>但是我经历过各种项目，发现个项目的启动方式都不相同，有的用nginx，有的用node，而且端口，启动的首页也都不相同。在我切换项目的开发的时候，发现好难啊。我要想很久，然后看看代码，才知道正确的打开姿势TT。有时候还要问问负责项目的老司机。  </p>
-<p>土拨鼠就是提供了前端项目本地开发的所需要的环境。配置好项目请求mock数据路径，配置好资源请求代理规则。同时可以多配置，完全是我辈福音啊。妈妈再也不用担心我多项目切换了。不论是手机，pc，千牛，都可以。</p>
-<h2 id="颜值"><a href="#颜值" class="headerlink" title="颜值"></a>颜值</h2><p>首先土拨鼠的颜值确实不高。上个没有美颜的素照两张<br><img src="http://ww2.sinaimg.cn/large/72f96cbagw1f5x6teevbrj21kw0pu11k.jpg" alt=""></p>
-<hr>
-<p><img src="http://ww3.sinaimg.cn/large/72f96cbagw1f5x6vu2tn4j21kw0ttacy.jpg" alt=""></p>
-<p>图1是代理的主界面，图2是配置界面。现在确实还比较素，那也说明还有提升的空间。同时作为设计脑残，想不出来好的设计交互，那就只能先把功能都平铺放出来，让人一下就明白。年轻人要注重内在美。</p>
-<h2 id="内在美"><a href="#内在美" class="headerlink" title="内在美"></a>内在美</h2><p>扯蛋完了，下面就讲讲怎么用吧。<br>首先开启软件，这里主要windows下千牛客户端为例，其他浏览器pc等都是类似的。软件的<br>下载地址我在文章最后提供。    </p>
-<h3 id="开启代理"><a href="#开启代理" class="headerlink" title="开启代理"></a>开启代理</h3><p><img src="http://ww2.sinaimg.cn/large/72f96cbagw1f5x81ud0nsg20xu0j87wo.gif" alt=""><br>上面展示了，开启了代理，监控流量。首先设置千牛的代理设置，地址设成127.0.0.1端口是8888.然后就能看到千牛所有流量请求。包括资源和数据。</p>
-<h3 id="代理静态文件"><a href="#代理静态文件" class="headerlink" title="代理静态文件"></a>代理静态文件</h3><p><img src="http://ww3.sinaimg.cn/large/72f96cbagw1f5x8td9tx9g20z10johdv.gif" alt=""><br>上面暂时了，在修改配置中增加配置。就可以代理到本地静态文件。配置mock数据路径，就可以代理到本地的mock数据。代理规则是支持正则表达式的，所以非常灵活。配置可以选择开启或者不开启，并且有多配置。</p>
-<h3 id="Mock数据编写"><a href="#Mock数据编写" class="headerlink" title="Mock数据编写"></a>Mock数据编写</h3><p>mock数据的编写是支持js语法的。实际上是一个js的function，传入参数。这意味着你可以根据自己传入的参数，模拟多种情况。并且返回数据。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(params)&#123;</span><br><span class="line">	 if (params.status) &#123;</span><br><span class="line">	 	retrn &#123;</span><br><span class="line">	 		resule: 100</span><br><span class="line">	 	&#125;</span><br><span class="line">	 &#125; else return &#123;</span><br><span class="line">        &quot;api_name&quot;:&quot;active_deleteActive&quot;,</span><br><span class="line">        &quot;data&quot;:&#123;</span><br><span class="line">            &quot;status&quot;: true</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;result&quot;:100</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p>最后放出项目地址 <a href="https://github.com/flyoverGu/groundhog" target="_blank" rel="external">git</a> 如果觉得还不错就star下！！！<br>打包后的文件在release page</p>
-
       
     </div>
     
@@ -316,6 +294,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/17/土拨鼠代理器功能介绍/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -362,18 +344,7 @@
         <blockquote>
 <p>学好node，学好stream。stream就是流。基本上大大小小的node程序都用到了stream。</p>
 </blockquote>
-<p>stream的官方教程在<a href="https://nodejs.org/api/stream.html" target="_blank" rel="external">这里</a>，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。</p>
-<p>先看个node读文件的例子：   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile(&apos;./ss.js&apos;, (err, data) =&gt; &#123;</span><br><span class="line">    console.log(data.toString());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>正常文件读取就是调用fs.readFile然后异步获取文件数据data。这种方式就是把文件的内容都读取出来，然后放在内存中操作。于是就会产生一个问题。当文件非常大的时候，读取出来放在内存中明显是不合适的。<br>那么怎么解决这个问题呢？<br>一个办法就是读取一部分数据，然后处理完之后，再读取一部分数据。这样不论文件有多大都能处理掉。<br>Stream就是这样的实现方式。改一下上面读文件的写法:    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let data;</span><br><span class="line">fs.createReadStream(&apos;./ss.js&apos;)</span><br><span class="line">    .on(&apos;data&apos;, chunk =&gt; &#123;</span><br><span class="line">        data += chunk;</span><br><span class="line">    &#125;)</span><br><span class="line">    .on(&apos;end&apos;, () =&gt; &#123;</span><br><span class="line">        console.log(data.toString());</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-<p>用fs.createReadStream创建一个Stream对象。然后监听Stream对象的data和end事件。data事件会在读数据的时候触发，end事件会在数据读完之后触发。<br>然而上面的例子也是同样把所有的数据都读到了内容中然后输出。再改个写法：   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.createReadStream(&apos;./ss.js&apos;)</span><br><span class="line">    .on(&apos;data&apos;, chunk =&gt; &#123;</span><br><span class="line">        process.stdout.write(chunk);</span><br><span class="line">    &#125;)</span><br><span class="line">    .on(&apos;end&apos;, () =&gt; &#123;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-<p>这样写就正真做到了按块处理数据。因为process.stdout是个WriteStream。可以把数据一块一块交给它处理。<br>当这样写的时候还有问题，就是当WriteStream处理速度比ReadStream慢的时候。就会出现上一个块数据还没处理好，下一块数据就来了。造成数据溢出。可以通过判断WriteStream.write的返回值。来暂停／开启读取，以此来控制速度。当然还有简单的方式那就是pipe。再改下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.createReadStream(&apos;./ss.js&apos;).pipe(process.stdout);</span><br></pre></td></tr></table></figure>
-<p>pipe内部实现了。读取数据速度的控制，保证丢失数据。</p>
-<p>最后给一个非常形象的pipe管道的图。<br><img src="http://ww4.sinaimg.cn/large/006tNbRwgw1f5h10vvncoj30rm0auwfx" alt=""><br>这是个双通道的管道，即可读又可写。</p>
-
+<p>stream的官方教程在<a href="https://nodejs.org/api/stream.html">这里</a>，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。</p>
       
     </div>
     
@@ -386,6 +357,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/03/理解node stream/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -505,15 +480,6 @@
         <blockquote>
 <p>在我们开发的过程经常遇到<code>Permission denied</code>，权限不足。于是我们就用<code>sudo xxx</code>来解决这个问题。但是为什么会权限不足？权限不足的原因是什么？</p>
 </blockquote>
-<ol>
-<li><p>文件权限<br>在某目录下执行<code>ls -al</code>，可以看到一连串当前目录下文件或者文件夹的信息。像这样<img src="http://ww4.sinaimg.cn/large/72f96cbagw1f50pq6557ij21160gcn15" alt="">其中就以圈起来文件做个介绍。<br><code>drwxr-xr-x  43 flyover  staff   1.4K Jun 17 16:44 fly</code><br><code>drwxr-xr-x</code>表示文件权限，第一个字母<code>d</code>表示文件夹，类似的还是<code>l</code>表示连接文件等。后面以三个字母为一组，分别是<code>rwx</code>,<code>r-x</code>,<code>r-x</code>表示第一组是owner的权限，第二组是group的权限，第三组是other的权限。其中<code>r</code>表示读权限，<code>w</code>表示写权限，<code>x</code>表示执行权限。<br><code>43</code>表示连接数。表示整个文件树中有多少个文件，与此文件连接。通俗的讲就是如果是文件的话就是1，如果是文件夹的话，表示下面有多少个文件。<br><code>flyover</code>就是文件owner。<br><code>staff</code>文件所属的文件组。<br><code>1.4k</code>表示文件大小。<br><code>Jun 7 16:44</code>表示最后修改时间。<br><code>fly</code>文件名。   </p>
-</li>
-<li><p>命令<br>修改文件属性的几个命令<br><code>chgrp</code>：改变文件所属的组。<br><code>chown</code>：文件owner。即修改拥有者。<br><code>chmod</code>：修改文件权限。</p>
-</li>
-<li><p>实际问题<br>当我们遇到用户权限不够的时候，可以查看文件的权限。然后用对应的命令修改文件属性。<br>比如我之前遇到nginx的user是www。但是我的项目在root下，这时nginx访问静态文件的时候，会出现<code>403 Forbidden</code>的错误。这个时候有两方式解决这个问题，第一可以修改项目的位置，把项目移到www的用户目录下去。第二可以修改项目的group属性。还有一种就是修改文件的<code>rwx</code>权限，让任何人都能访问到。</p>
-</li>
-</ol>
-
       
     </div>
     
@@ -526,6 +492,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/19/理解linux下文件权限问题/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -573,16 +543,6 @@
 <p>nginx本身是一个性能非常好的轻量级服务器，基本上已经把硬件资源发挥到极致。它有几大特点：更快，高拓展性，高可靠性，低内存消耗，单机支持10w以上并发，热部署。其实总结下，就是nginx非常好用高效。   </p>
 </blockquote>
 <p>本文只介绍nginx简单的使用，并且主要是解决前端开发本地代理问题。也就是说不涉及到高并发和性能问题的配置，只是最简单的反向代理配置。</p>
-<p>首先抄一段我们常用的配置    </p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> xx.superboss.cc;</span><br><span class="line">    <span class="attribute">charset</span> utf-<span class="number">8</span>;</span><br><span class="line">    <span class="attribute">index</span> /index.xhtml;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">location</span> <span class="regexp">~* ^.+\.(xls|woff2|log|jpg|jpeg|gif|png|ico|html|cfm|cfc|afp|asp|lasso|pl|py|txt|fla|swf|zip)$</span> &#123;</span><br><span class="line">        <span class="attribute">root</span> /Users/xxx/static; <span class="comment">#代理静态文件到本地</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">location</span> <span class="regexp">~* ^.+\.(json|js|css|less)$</span> &#123;</span><br><span class="line">        <span class="comment">#root /Users/xxx/static; #代理静态文件到本地</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">            <span class="attribute">proxy_pass</span> <span class="variable">$scheme</span>://<span class="variable">$host</span><span class="variable">$request_uri</span>; <span class="comment">#代理请求到线上</span></span><br><span class="line">            <span class="attribute">proxy_set_header</span> Host <span class="variable">$http_host</span>; <span class="comment">#设置打理请求头信息</span></span><br><span class="line">            <span class="comment">#proxy_pass http://127.0.0.1:8888; #也可以直接指定ip端口</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>一个server就是一个虚拟主机，一个主机可以配置监听的端口<code>listen</code>和域名<code>server_name</code>，多个<code>location</code>来处理具体的请求。   </p>
-<ol>
-<li>listen参数决定nginx服务如何监听端口。在listen后可以只加IP地址、端口或主机 名，非常灵活。   </li>
-<li>server_name后可以跟多个主机名称。当开始处理一个http请求时，nginx会取出请求头中的host信息，和每个server_name进行比对，以此来确定由那个server来处理请求。   </li>
-<li>location会尝试根据用户请求中的URI来匹配上面的/uri表达式，如果可以匹配，就选择location{}块中的配置来处理用户请求。location在匹配的时候有如下规则：      </li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">location  = / &#123;</span><br><span class="line">  # 只匹配"/".</span><br><span class="line">  [ configuration A ] </span><br><span class="line">&#125;</span><br><span class="line">location  / &#123;</span><br><span class="line">  # 匹配任何请求，因为所有请求都是以"/"开始</span><br><span class="line">  # 但是更长字符匹配或者正则表达式匹配会优先匹配</span><br><span class="line">  [ configuration B ] </span><br><span class="line">&#125;</span><br><span class="line">location ^~ /images/ &#123;</span><br><span class="line">  # 匹配任何以 /images/ 开始的请求，并停止匹配 其它location</span><br><span class="line">  [ configuration C ] </span><br><span class="line">&#125;</span><br><span class="line">location ~* .(gif|jpg|jpeg)$ &#123;</span><br><span class="line">  # 匹配以 gif, jpg, or jpeg结尾的请求. </span><br><span class="line">  # 但是所有 /images/ 目录的请求将由 [Configuration C]处理.   </span><br><span class="line">  [ configuration D ] </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
       
     </div>
     
@@ -595,6 +555,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/12/手把手教你配置nginx反向代理/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -641,9 +605,6 @@
         <blockquote>
 <p>在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。      </p>
 </blockquote>
-<p>搜索的本质，就是遍历各种可能性，然后通过一些奇淫巧技排除一些可能性，我们俗称剪枝。剪枝的优劣，直接影响到算法性能。<br>问它能解决什么问题呢？它能解决所有问题，因为它枚举了所有可能性。只不过需要大量的剪枝技巧来优化性能。<br>举个栗子：你在一个小区里找一个人，但是你又不知道他具体住哪里？那最土的办法就是挨家挨户的找。这个就是搜索，当你明确知道他不在某栋楼里的时候，你就不用搜索这栋楼了。这个就叫剪枝。<br>很多时候，为了提高性能，但是又没有明确条件的时候，可以采用暴力剪枝。<br>还是那个找人的栗子，比如就只找奇数号楼。这样效率虽然高了不少，但是也有可能永远找不到正确答案。在实际运用中，暴力剪枝还是非常常见的。这是个取舍问题，比如保证正确率在80%就够了，或者找到近似答案就行了。<br>搜索是一种思想，所有它可以衍生出非常多具体的，针对某一些具体问题的算法。<br>常见的有：深度优先遍历（搜索），和广度优先遍历（搜索）。<br>给个结构树说明下：<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jcvazr0yj20fq0b0js5" alt=""><br>如果遍历顺序是<code>A,B,E,H</code>，这样的就是深度遍历。如果是<code>A,B,C,D</code>，这样遍历就是广度优先。这个时候就觉得大学的好好学习的重要性了，在实际开发中吃多少的亏啊！<br>本文篇(wo)幅(bi)有(jiao)限(lan)，只介绍下广度优先的搜索。<br>以上是一维平面下，其实二维平面也是一样的。只要理解其中的精髓，其实都一样的。<br>看图<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jd8agyckj20b006yq3d" alt=""><br>整个图可以看成xy的坐标系。那么人和门的位置就是坐标点。那人移动就变成了[-1,0],[1,0],[0,1],[0,-1]。 那么人要找到出口就是，枚举四个方向，然后移动，然后再枚举四个方向。终有一天，是能找到出口的。<br>然后在这个基础上增加难度，就是增加障碍物。像这样<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jdg5h2lkj20b605sjri" alt="">，这样子人就只能从墙的两边绕过去。这样其实也就是在判断的时候增加了几个判断条件而已。</p>
-<p>最后给一个可以demo，源码源码就在页面上。<a href="http://flyovergu.github.io/labs/prisonBreak/index.html">地址</a></p>
-
       
     </div>
     
@@ -656,6 +617,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/04/搜索算法/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -703,15 +668,6 @@
 <p>connect是一款node中间件框架。koa，express等主流node框架都是基于connect开发的。connect本身非常精简，是一个比较基础的框架。   </p>
 </blockquote>
 <p>从原理上讲connect其实也非常简单，就是将一系列的组件链接在一起，然后http请求依次经过这些组件。这些组件就是中间件，每个中间件独立处理各自的任务。比较常用的中间有bodyparse，session。组件之间通过req和res对象传递数据。</p>
-<p>给个github地址<a href="https://github.com/senchalabs/connect" target="_blank" rel="external">https://github.com/senchalabs/connect</a><br>从源码上来看算上注释才200多行。</p>
-<p>git上的例子   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">var connect = require(&apos;connect&apos;);</span><br><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line"></span><br><span class="line">var app = connect();</span><br><span class="line"></span><br><span class="line">// gzip/deflate outgoing responses</span><br><span class="line">var compression = require(&apos;compression&apos;);</span><br><span class="line">app.use(compression());</span><br><span class="line"></span><br><span class="line">// store session state in browser cookie</span><br><span class="line">var cookieSession = require(&apos;cookie-session&apos;);</span><br><span class="line">app.use(cookieSession(&#123;</span><br><span class="line">    keys: [&apos;secret1&apos;, &apos;secret2&apos;]</span><br><span class="line">&#125;));</span><br><span class="line"></span><br><span class="line">// parse urlencoded request bodies into req.body</span><br><span class="line">var bodyParser = require(&apos;body-parser&apos;);</span><br><span class="line">app.use(bodyParser.urlencoded());</span><br><span class="line"></span><br><span class="line">// respond to all requests</span><br><span class="line">app.use(function(req, res)&#123;</span><br><span class="line">  res.end(&apos;Hello from Connect!\n&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//create node.js http server and listen on port</span><br><span class="line">http.createServer(app).listen(3000);</span><br></pre></td></tr></table></figure>
-<p>从例子就能看出，connect用use保存中间件。然后当请求来到的时候，挨个触发这些中间件。<br>看看use的实现，就是把route和对应的handle，存放到stack中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">var handle = fn;</span><br><span class="line">var path = route;</span><br><span class="line"></span><br><span class="line">// default route to &apos;/&apos;</span><br><span class="line">if (typeof route !== &apos;string&apos;) &#123;</span><br><span class="line">  handle = route;</span><br><span class="line">  path = &apos;/&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// wrap sub-apps</span><br><span class="line">if (typeof handle.handle === &apos;function&apos;) &#123;</span><br><span class="line">  var server = handle;</span><br><span class="line">  server.route = path;</span><br><span class="line">  handle = function (req, res, next) &#123;</span><br><span class="line">    server.handle(req, res, next);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// wrap vanilla http.Servers</span><br><span class="line">if (handle instanceof http.Server) &#123;</span><br><span class="line">  handle = handle.listeners(&apos;request&apos;)[0];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// strip trailing slash</span><br><span class="line">if (path[path.length - 1] === &apos;/&apos;) &#123;</span><br><span class="line">  path = path.slice(0, -1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// add the middleware</span><br><span class="line">debug(&apos;use %s %s&apos;, path || &apos;/&apos;, handle.name || &apos;anonymous&apos;);</span><br><span class="line">this.stack.push(&#123; route: path, handle: handle &#125;);</span><br><span class="line"></span><br><span class="line">return this;</span><br></pre></td></tr></table></figure>
-<p>然后看看handle中核心代码的实现，当有请求的时候，通过请求的path找到对应的route并且执相应的handle。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">proto.handle = function handle(req, res, out) &#123;</span><br><span class="line">  var index = 0;</span><br><span class="line">  var protohost = getProtohost(req.url) || &apos;&apos;;</span><br><span class="line">  var removed = &apos;&apos;;</span><br><span class="line">  var slashAdded = false;</span><br><span class="line">  var stack = this.stack;</span><br><span class="line"></span><br><span class="line">  // final function handler</span><br><span class="line">  var done = out || finalhandler(req, res, &#123;</span><br><span class="line">    env: env,</span><br><span class="line">    onerror: logerror</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  // store the original URL</span><br><span class="line">  req.originalUrl = req.originalUrl || req.url;</span><br><span class="line"></span><br><span class="line">  function next(err) &#123;</span><br><span class="line">      xxxx</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // call the layer handle</span><br><span class="line">    call(layer.handle, route, err, req, res, next);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  next();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>抄一段别人的总结，感觉说得非常到位<br>总的来看，connect其实是典型的chain of responsibility模式的实现。各个中间件就是责任链上的一个节点，route pattern就是决定中间件是否参与请求处理的判断条件。链只知道请求的传递，而中间件只知道自己的处理逻辑，这样对象之间的耦合是非常松散的，任务的指派过程也是相当灵活的。第三方按照中间件的接口约定即可开发自己的中间件并加入到connect中，同时还可以调整链的构建顺序来控制请求处理的流程。但由于http处理流程的一些特殊性，有的中间件之间也存在有一些隐含的依赖关系（如前面提到的cookie和session），所以connect对中间件的加载顺序也有着一定的要求。</p>
-
       
     </div>
     
@@ -724,6 +680,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/28/connect源码解读/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -770,13 +730,6 @@
         <blockquote>
 <p>这个跟上一篇chrome开发功能是姐妹篇，都是‘不为人知’系列。哈哈～<br>这篇主要讲一下在debug过程中，使用到的实用技巧。当然也比较小众的技巧。</p>
 </blockquote>
-<ol>
-<li><p>编辑断点。chrome浏览器的debug本身做得非常程序员化，可以支持编辑断点。就是可以设置在什么情况下触发断点。这个功能当在循环语句中打断点的时候，非常有用！因为通常情况下并不是所有这个循环下的断点都要进。为了提高定位问题的速度，可以给断点增加一个条件，只有当条件语句为true时，才触发断点。<br> 看截图，在断点上右键，然后选Edit breakpoint<br><img src="http://ww2.sinaimg.cn/large/a15b4afegw1f43acbm60jj21kw0g8dkp" alt="编辑断点1"><br> 此时写条件语句，只有当条件语句为<code>true</code>时，才触发断点。<br><img src="http://ww2.sinaimg.cn/large/a15b4afegw1f43ahfan8rj21ks0ion2o" alt="编辑断点2"></p>
-</li>
-<li><p>在断点处执行上下文环境下执行语句。这个功能其实大家都会用。但是大家用的流程是这样的：复制代码，然后打开console，粘贴代码，最后执行代码看看结果。其实还有更简单的方式，选中需要执行的代码，然后按快捷键<code>ctrl+shift+e</code>,就直接能在控制台看到执行结果。<br><img src="http://ww2.sinaimg.cn/large/a15b4afegw1f43bb91ql3j21g60rsag3" alt="执行选中语句"></p>
-</li>
-</ol>
-
       
     </div>
     
@@ -789,6 +742,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/21/哪些不为人知的实用chrome debug技巧/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -835,20 +792,6 @@
         <blockquote>
 <p>网上有很多很全面详细的介绍，但是我觉得其实许多功能我们正常的开发并用不到，这里我只介绍一些我们开发过程非常实用，但是平时都不知道的功能。</p>
 </blockquote>
-<p><img src="http://7xp1l3.com1.z0.glb.clouddn.com/blog/chrome/all.png" alt="all"><br>这个基本上是我们前端工程师明天都会看到的界面，也就是我们的工地，金矿。上面标的1，2，3，4，5。就是我要介绍的一些功能。</p>
-<ol>
-<li><p>在element界面，我们最常用的就是查看／修改dom结构，查看／修改css样式，等等。其实我们还可以<strong><em>给dom节点打断点</em></strong>。那么给没有逻辑的dom节点打断点，有什么作用呢？<br>有三个非常实用的作用：<strong><em>监听子节点变更，监听当前节点属性变更，监听当前节点移除</em></strong>。<br>最常用用到的场景就是当遇到莫名其妙dom节点消失了，或者dom节点属性变更，又不知道是哪里的js造成的。此时用这个功能，就能非常快速的定位问题。<br><img src="http://7xp1l3.com1.z0.glb.clouddn.com/blog/chrome/element.png" alt="element"></p>
-</li>
-<li><p>在network界面，可以查看各种资源数据的请求。但是当请求数量过多的时候，很不利于查看。幸好chorme network有强大的过滤功能。可以在图中1的位置选择过滤出想看的资源请求，也可以在边上的输入框内进行更加准确的搜索。<br>可以在图中2的位置选择模拟网络模式(之前版本只有模拟手机界面才有这个功能)，模拟3G，2G，断网等等的情况。<br>在勾选图中4的preserve log的功能，能在页面刷新的情况下，依旧显示之前的请求信息。可以用来定位有些地址打开就302重定向了，根本看不到第一次请求是怎么回事的问题。同理console界面中的preserve log也是相同的效果。<br><img src="http://7xp1l3.com1.z0.glb.clouddn.com/blog/chrome/network.png" alt="network"></p>
-</li>
-<li><p>在source界面，可以查看源文件并且打一些断点调试。图中箭头所指的snippets标签页，在这个下面可以自己写一些js片段，用来测试或者纪录。因为在浏览器中，所以调试和开发非常自然。当然可以写一些es6的语法。<br><img src="http://7xp1l3.com1.z0.glb.clouddn.com/blog/chrome/source.png" alt="source"></p>
-</li>
-<li><p>在resource界面，可以查看在当前域名下local storage, session storage, cookie等存储情况，当然也可以删除缓存。<br><img src="http://7xp1l3.com1.z0.glb.clouddn.com/blog/chrome/resource.png" alt="resource"></p>
-</li>
-<li><p>在settings界面，有一个选项一定要勾选，那就是 Disable cache (while DevTools is open)在打开devtools的情况下，刷新是不会采用缓存资源的。<br><img src="http://7xp1l3.com1.z0.glb.clouddn.com/blog/chrome/setting.png" alt="setting"></p>
-</li>
-</ol>
-
       
     </div>
     
@@ -861,6 +804,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/15/哪些不为人知的实用chrome开发工具功能/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

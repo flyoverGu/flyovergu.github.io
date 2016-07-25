@@ -6,25 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>搜索算法 | 他好像一条狗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。      
-
-搜索的本质，就是遍历各种可能性，然后通过一些奇淫巧技排除一些可能性，我们俗称剪枝。剪枝的优劣，直接影响到算法性能。问它能解决什么问题呢？它能解决所有问题，因为它枚举了所有可能性。只不过需要大量的剪枝技巧来优化性能。举个栗子：你在一个小区里找一个人，但是你又不知道他具体住哪里？那最土">
+  <meta name="description" content="在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搜索算法">
 <meta property="og:url" content="http://flyovergu.github.io/2016/06/04/搜索算法/index.html">
 <meta property="og:site_name" content="他好像一条狗">
-<meta property="og:description" content="在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。      
-
-搜索的本质，就是遍历各种可能性，然后通过一些奇淫巧技排除一些可能性，我们俗称剪枝。剪枝的优劣，直接影响到算法性能。问它能解决什么问题呢？它能解决所有问题，因为它枚举了所有可能性。只不过需要大量的剪枝技巧来优化性能。举个栗子：你在一个小区里找一个人，但是你又不知道他具体住哪里？那最土">
+<meta property="og:description" content="在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f4jcvazr0yj20fq0b0js5">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f4jd8agyckj20b006yq3d">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f4jdg5h2lkj20b605sjri">
-<meta property="og:updated_time" content="2016-06-06T01:46:10.000Z">
+<meta property="og:updated_time" content="2016-07-25T08:20:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搜索算法">
-<meta name="twitter:description" content="在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。      
-
-搜索的本质，就是遍历各种可能性，然后通过一些奇淫巧技排除一些可能性，我们俗称剪枝。剪枝的优劣，直接影响到算法性能。问它能解决什么问题呢？它能解决所有问题，因为它枚举了所有可能性。只不过需要大量的剪枝技巧来优化性能。举个栗子：你在一个小区里找一个人，但是你又不知道他具体住哪里？那最土">
+<meta name="twitter:description" content="在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/a15b4afegw1f4jcvazr0yj20fq0b0js5">
   
   
@@ -235,6 +229,7 @@
         <blockquote>
 <p>在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。      </p>
 </blockquote>
+<a id="more"></a>
 <p>搜索的本质，就是遍历各种可能性，然后通过一些奇淫巧技排除一些可能性，我们俗称剪枝。剪枝的优劣，直接影响到算法性能。<br>问它能解决什么问题呢？它能解决所有问题，因为它枚举了所有可能性。只不过需要大量的剪枝技巧来优化性能。<br>举个栗子：你在一个小区里找一个人，但是你又不知道他具体住哪里？那最土的办法就是挨家挨户的找。这个就是搜索，当你明确知道他不在某栋楼里的时候，你就不用搜索这栋楼了。这个就叫剪枝。<br>很多时候，为了提高性能，但是又没有明确条件的时候，可以采用暴力剪枝。<br>还是那个找人的栗子，比如就只找奇数号楼。这样效率虽然高了不少，但是也有可能永远找不到正确答案。在实际运用中，暴力剪枝还是非常常见的。这是个取舍问题，比如保证正确率在80%就够了，或者找到近似答案就行了。<br>搜索是一种思想，所有它可以衍生出非常多具体的，针对某一些具体问题的算法。<br>常见的有：深度优先遍历（搜索），和广度优先遍历（搜索）。<br>给个结构树说明下：<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jcvazr0yj20fq0b0js5" alt=""><br>如果遍历顺序是<code>A,B,E,H</code>，这样的就是深度遍历。如果是<code>A,B,C,D</code>，这样遍历就是广度优先。这个时候就觉得大学的好好学习的重要性了，在实际开发中吃多少的亏啊！<br>本文篇(wo)幅(bi)有(jiao)限(lan)，只介绍下广度优先的搜索。<br>以上是一维平面下，其实二维平面也是一样的。只要理解其中的精髓，其实都一样的。<br>看图<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jd8agyckj20b006yq3d" alt=""><br>整个图可以看成xy的坐标系。那么人和门的位置就是坐标点。那人移动就变成了[-1,0],[1,0],[0,1],[0,-1]。 那么人要找到出口就是，枚举四个方向，然后移动，然后再枚举四个方向。终有一天，是能找到出口的。<br>然后在这个基础上增加难度，就是增加障碍物。像这样<img src="http://ww2.sinaimg.cn/large/a15b4afegw1f4jdg5h2lkj20b605sjri" alt="">，这样子人就只能从墙的两边绕过去。这样其实也就是在判断的时候增加了几个判断条件而已。</p>
 <p>最后给一个可以demo，源码源码就在页面上。<a href="http://flyovergu.github.io/labs/prisonBreak/index.html">地址</a></p>
 
