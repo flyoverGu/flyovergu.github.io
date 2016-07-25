@@ -4,29 +4,35 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>土拨鼠代理器功能介绍 | 他好像一条狗</title>
+  <title>node爬虫 | 他好像一条狗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。
+  <meta name="description" content="其实node写爬虫并不是特别合适，主要的原因，就是库的支持程度没有python那么高了。当然本着学习node的态度还是可以的。网上教用node写爬虫的一大堆，我这里不具体讲，怎么爬。就写写大体上的思路和可能会遇到的一些问题。
 
-干啥用在前后端分离的项目中，或者是客户端开发的过程中。前端往往需要一个后台才能启动，也就是我们常常在项目中看到的用node写的index.js。一个简单的服务器，">
+首先先给出几个node写爬虫的几个简单教程   
+
+使用 superagent 与 cheerio 完成简单爬虫     
+NodeJS写个爬虫，把文章放到kindle中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="土拨鼠代理器功能介绍">
-<meta property="og:url" content="http://flyovergu.github.io/2016/07/17/土拨鼠代理器功能介绍/index.html">
+<meta property="og:title" content="node爬虫">
+<meta property="og:url" content="http://flyovergu.github.io/2016/07/25/node爬虫/index.html">
 <meta property="og:site_name" content="他好像一条狗">
-<meta property="og:description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。
+<meta property="og:description" content="其实node写爬虫并不是特别合适，主要的原因，就是库的支持程度没有python那么高了。当然本着学习node的态度还是可以的。网上教用node写爬虫的一大堆，我这里不具体讲，怎么爬。就写写大体上的思路和可能会遇到的一些问题。
 
-干啥用在前后端分离的项目中，或者是客户端开发的过程中。前端往往需要一个后台才能启动，也就是我们常常在项目中看到的用node写的index.js。一个简单的服务器，">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/72f96cbagw1f5x6teevbrj21kw0pu11k.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/72f96cbagw1f5x6vu2tn4j21kw0ttacy.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/72f96cbagw1f5x81ud0nsg20xu0j87wo.gif">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/72f96cbagw1f5x8td9tx9g20z10johdv.gif">
-<meta property="og:updated_time" content="2016-07-18T01:36:54.000Z">
+首先先给出几个node写爬虫的几个简单教程   
+
+使用 superagent 与 cheerio 完成简单爬虫     
+NodeJS写个爬虫，把文章放到kindle中">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNbRwgw1f665g34qsxj30jz04ojrt.jpg">
+<meta property="og:updated_time" content="2016-07-25T07:25:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="土拨鼠代理器功能介绍">
-<meta name="twitter:description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。
+<meta name="twitter:title" content="node爬虫">
+<meta name="twitter:description" content="其实node写爬虫并不是特别合适，主要的原因，就是库的支持程度没有python那么高了。当然本着学习node的态度还是可以的。网上教用node写爬虫的一大堆，我这里不具体讲，怎么爬。就写写大体上的思路和可能会遇到的一些问题。
 
-干啥用在前后端分离的项目中，或者是客户端开发的过程中。前端往往需要一个后台才能启动，也就是我们常常在项目中看到的用node写的index.js。一个简单的服务器，">
-<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/72f96cbagw1f5x6teevbrj21kw0pu11k.jpg">
+首先先给出几个node写爬虫的几个简单教程   
+
+使用 superagent 与 cheerio 完成简单爬虫     
+NodeJS写个爬虫，把文章放到kindle中">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/006tNbRwgw1f665g34qsxj30jz04ojrt.jpg">
   
   
     <link rel="icon" href="http://7xp1l3.com1.z0.glb.clouddn.com/avatar.jpg">
@@ -196,11 +202,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-土拨鼠代理器功能介绍" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-node爬虫" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/17/土拨鼠代理器功能介绍/" class="article-date">
-  	<time datetime="2016-07-17T12:33:15.000Z" itemprop="datePublished">2016-07-17</time>
+      <a href="/2016/07/25/node爬虫/" class="article-date">
+  	<time datetime="2016-07-25T06:30:59.000Z" itemprop="datePublished">2016-07-25</time>
 </a>
     </div>
   
@@ -213,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      土拨鼠代理器功能介绍
+      node爬虫
     </h1>
   
 
@@ -222,7 +228,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/proxy/">-proxy</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
 	</div>
 
         
@@ -234,21 +240,24 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。</p>
+<p>其实node写爬虫并不是特别合适，主要的原因，就是库的支持程度没有python那么高了。当然本着学习node的态度还是可以的。网上教用node写爬虫的一大堆，我这里不具体讲，怎么爬。就写写大体上的思路和可能会遇到的一些问题。</p>
 </blockquote>
-<h2 id="干啥用"><a href="#干啥用" class="headerlink" title="干啥用"></a>干啥用</h2><p>在前后端分离的项目中，或者是客户端开发的过程中。前端往往需要一个后台才能启动，也就是我们常常在项目中看到的用node写的index.js。一个简单的服务器，主要是为了返回静态资源并且代理mock数据。  </p>
-<p>但是我经历过各种项目，发现个项目的启动方式都不相同，有的用nginx，有的用node，而且端口，启动的首页也都不相同。在我切换项目的开发的时候，发现好难啊。我要想很久，然后看看代码，才知道正确的打开姿势TT。有时候还要问问负责项目的老司机。  </p>
-<p>土拨鼠就是提供了前端项目本地开发的所需要的环境。配置好项目请求mock数据路径，配置好资源请求代理规则。同时可以多配置，完全是我辈福音啊。妈妈再也不用担心我多项目切换了。不论是手机，pc，千牛，都可以。</p>
-<h2 id="颜值"><a href="#颜值" class="headerlink" title="颜值"></a>颜值</h2><p>首先土拨鼠的颜值确实不高。上个没有美颜的素照两张<br><img src="http://ww2.sinaimg.cn/large/72f96cbagw1f5x6teevbrj21kw0pu11k.jpg" alt=""></p>
-<hr>
-<p><img src="http://ww3.sinaimg.cn/large/72f96cbagw1f5x6vu2tn4j21kw0ttacy.jpg" alt=""></p>
-<p>图1是代理的主界面，图2是配置界面。现在确实还比较素，那也说明还有提升的空间。同时作为设计脑残，想不出来好的设计交互，那就只能先把功能都平铺放出来，让人一下就明白。年轻人要注重内在美。</p>
-<h2 id="内在美"><a href="#内在美" class="headerlink" title="内在美"></a>内在美</h2><p>扯蛋完了，下面就讲讲怎么用吧。<br>首先开启软件，这里主要windows下千牛客户端为例，其他浏览器pc等都是类似的。软件的<br>下载地址我在文章最后提供。    </p>
-<h3 id="开启代理"><a href="#开启代理" class="headerlink" title="开启代理"></a>开启代理</h3><p><img src="http://ww2.sinaimg.cn/large/72f96cbagw1f5x81ud0nsg20xu0j87wo.gif" alt=""><br>上面展示了，开启了代理，监控流量。首先设置千牛的代理设置，地址设成127.0.0.1端口是8888.然后就能看到千牛所有流量请求。包括资源和数据。</p>
-<h3 id="代理静态文件"><a href="#代理静态文件" class="headerlink" title="代理静态文件"></a>代理静态文件</h3><p><img src="http://ww3.sinaimg.cn/large/72f96cbagw1f5x8td9tx9g20z10johdv.gif" alt=""><br>上面暂时了，在修改配置中增加配置。就可以代理到本地静态文件。配置mock数据路径，就可以代理到本地的mock数据。代理规则是支持正则表达式的，所以非常灵活。配置可以选择开启或者不开启，并且有多配置。</p>
-<h3 id="Mock数据编写"><a href="#Mock数据编写" class="headerlink" title="Mock数据编写"></a>Mock数据编写</h3><p>mock数据的编写是支持js语法的。实际上是一个js的function，传入参数。这意味着你可以根据自己传入的参数，模拟多种情况。并且返回数据。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(params)&#123;</span><br><span class="line">	 if (params.status) &#123;</span><br><span class="line">	 	retrn &#123;</span><br><span class="line">	 		resule: 100</span><br><span class="line">	 	&#125;</span><br><span class="line">	 &#125; else return &#123;</span><br><span class="line">        &quot;api_name&quot;:&quot;active_deleteActive&quot;,</span><br><span class="line">        &quot;data&quot;:&#123;</span><br><span class="line">            &quot;status&quot;: true</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;result&quot;:100</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p>最后放出项目地址 <a href="https://github.com/flyoverGu/groundhog" target="_blank" rel="external">git</a> 如果觉得还不错就star下！！！<br>打包后的文件在release page</p>
+<p>首先先给出几个node写爬虫的几个简单教程   </p>
+<ol>
+<li><a href="https://github.com/alsotang/node-lessons/tree/master/lesson3" target="_blank" rel="external">使用 superagent 与 cheerio 完成简单爬虫</a>     </li>
+<li><a href="http://www.cnblogs.com/hustskyking/p/spider-with-node.html" target="_blank" rel="external">NodeJS写个爬虫，把文章放到kindle中阅读</a>   </li>
+<li><a href="http://blog.didispace.com/nodejspachong/" target="_blank" rel="external">使用Node.js制作爬虫教程</a></li>
+</ol>
+<p>想用node写爬虫的小白同学可以照着学一下。<br>然后我这边就主要讲一下爬虫思路。<br>所谓爬虫无非是要别人的网站页面上，获取到有价值的信息并保存下来。<br>那么流程上就成了：<img src="http://ww2.sinaimg.cn/large/006tNbRwgw1f665g34qsxj30jz04ojrt.jpg" alt=""><br>一个环节一个环节简单说下。除了数据分析，因为我不会。。。。  </p>
+<ol>
+<li>获取html就是用node发请求取获取指定网站上的html源码。在这个步骤上，还是有蛮多库可以选择的。当然也可用原生node的http库做这个事。 其他三方库也是蛮多的，比如：<a href="https://github.com/request/request" target="_blank" rel="external">request</a>, <a href="https://github.com/visionmedia/superagent" target="_blank" rel="external">superagent</a>,etc。<br><strong><em>这里需要注意的事</em></strong>， 当请求一下子发太多，因为网络问题，会导致大量请求失败。所以这里最好引入一个三方库（<a href="https://github.com/tj/co" target="_blank" rel="external">co</a>, <a href="https://github.com/caolan/async" target="_blank" rel="external">async</a>），来控制请求数。保证一下子请求不要太多。</li>
+<li>分析html。简单的可以直接用正则表达式，复杂的可以用<a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="external">cheerio</a>，这个库基本上就是node端的jquery。所以用jq获取页面的对应信息还是比较简单的。<br><strong><em>当然也有坑</em></strong>, 当直接能获取到html源码的网页，用这种方式当然可以了。但是想新浪微博之类的把html写在js代码里，需要运行js才能渲染出页面的网站。就是自己稍稍动动脑筋，用<code>eval</code>执行下js，还是能渲染页面的。但是如果遇到spa框架写的页面。那基本上就没戏了。<br>需要换方案解决，可以用<a href="http://phantomjs.org/" target="_blank" rel="external">phantomjs</a>之类的无头浏览器。正常访问页面，然后正常获取数据的方式来做。     </li>
+<li>保存数据基本上很简单了。自己玩玩的项目可以直接用fs写文件。大项目需要做数据分析的就放入数据库。</li>
+<li>分析大量数据。不会。。。。。。</li>
+</ol>
+<blockquote>
+<p>以上就是我对node爬虫的一些认识。</p>
+</blockquote>
 
       
     </div>
@@ -258,18 +267,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/07/25/node爬虫/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          node爬虫
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/07/03/理解node stream/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">理解node stream</div>
+    <a href="/2016/07/17/土拨鼠代理器功能介绍/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">土拨鼠代理器功能介绍</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -285,7 +285,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="土拨鼠代理器功能介绍" data-title="土拨鼠代理器功能介绍" data-url="http://flyovergu.github.io/2016/07/17/土拨鼠代理器功能介绍/"></div>
+	<div class="ds-thread" data-thread-key="node爬虫" data-title="node爬虫" data-url="http://flyovergu.github.io/2016/07/25/node爬虫/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
