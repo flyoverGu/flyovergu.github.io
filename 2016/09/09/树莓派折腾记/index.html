@@ -27,7 +27,7 @@
  12// 查看sd卡对应dev路径编号diskutil list
  得到 一般sd卡的路径是/dev/disk">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/72f96cbagw1f7ql21wzuvj215e0batav.jpg">
-<meta property="og:updated_time" content="2016-09-12T08:19:47.000Z">
+<meta property="og:updated_time" content="2016-09-12T08:22:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派折腾记">
 <meta name="twitter:description" content="好久没更新了，忙各种生活和工作的事，当时主要还是自己偷懒。今天记录下之前折腾过的树莓派安装系统和配置。
@@ -136,7 +136,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/node-pipe-stream/" style="font-size: 10px;">-node -pipe -stream</a> <a href="/tags/proxy/" style="font-size: 10px;">-proxy</a> <a href="/tags/chrome/" style="font-size: 15px;">chrome</a> <a href="/tags/devTool/" style="font-size: 15px;">devTool</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node/" style="font-size: 15px;">node</a> <a href="/tags/seo/" style="font-size: 10px;">seo</a> <a href="/tags/shadowsock/" style="font-size: 10px;">shadowsock</a> <a href="/tags/spa/" style="font-size: 10px;">spa</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/不为人知/" style="font-size: 10px;">不为人知</a> <a href="/tags/免费/" style="font-size: 10px;">免费</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/安装系统/" style="font-size: 10px;">安装系统</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/小游戏/" style="font-size: 15px;">小游戏</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心得/" style="font-size: 10px;">心得</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/源码/" style="font-size: 15px;">源码</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/福利/" style="font-size: 10px;">福利</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a> <a href="/tags/翻墙/" style="font-size: 10px;">翻墙</a>
+						<a href="/tags/chrome/" style="font-size: 15px;">chrome</a> <a href="/tags/devTool/" style="font-size: 15px;">devTool</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/pipe/" style="font-size: 10px;">pipe</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/seo/" style="font-size: 10px;">seo</a> <a href="/tags/shadowsock/" style="font-size: 10px;">shadowsock</a> <a href="/tags/spa/" style="font-size: 10px;">spa</a> <a href="/tags/stream/" style="font-size: 10px;">stream</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/不为人知/" style="font-size: 10px;">不为人知</a> <a href="/tags/免费/" style="font-size: 10px;">免费</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/安装系统/" style="font-size: 10px;">安装系统</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/小游戏/" style="font-size: 15px;">小游戏</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/心得/" style="font-size: 10px;">心得</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/树莓派/" style="font-size: 10px;">树莓派</a> <a href="/tags/源码/" style="font-size: 15px;">源码</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/福利/" style="font-size: 10px;">福利</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/精华/" style="font-size: 10px;">精华</a> <a href="/tags/翻墙/" style="font-size: 10px;">翻墙</a>
 					</div>
 				</section>
 				
@@ -262,6 +262,7 @@
 </li>
 </ol>
 <p>ps: 这里有人说有树莓派sd卡兼容性问题。但是笔者测试了一款不兼容的sd卡也能正常使用。但是切记一定要先格式化。</p>
+<a id="more"></a>
 <h3 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h3><p>修改interfaces文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/network/interfaces</span><br></pre></td></tr></table></figure>
 <p>修改成</p>
