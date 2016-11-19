@@ -98,14 +98,14 @@ stream的官方教程在这里，本文就不重复介绍Stream中的API了。�
 <meta property="og:description" content="学好node，学好stream。stream就是流。基本上大大小小的node程序都用到了stream。
 
 stream的官方教程在这里，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNbRwgw1f5h10vvncoj30rm0auwfx">
-<meta property="og:updated_time" content="2016-09-12T08:22:10.000Z">
+<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/理解node stream.md/0.png">
+<meta property="og:updated_time" content="2016-11-19T15:47:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解node stream">
 <meta name="twitter:description" content="学好node，学好stream。stream就是流。基本上大大小小的node程序都用到了stream。
 
 stream的官方教程在这里，本文就不重复介绍Stream中的API了。只是讲讲我对Stream的一些理解，希望能让读者更好的理解Stream。">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/006tNbRwgw1f5h10vvncoj30rm0auwfx">
+<meta name="twitter:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/理解node stream.md/0.png">
 
 
 
@@ -328,7 +328,7 @@ stream的官方教程在这里，本文就不重复介绍Stream中的API了。�
 <p>这样写就正真做到了按块处理数据。因为process.stdout是个WriteStream。可以把数据一块一块交给它处理。<br>当这样写的时候还有问题，就是当WriteStream处理速度比ReadStream慢的时候。就会出现上一个块数据还没处理好，下一块数据就来了。造成数据溢出。可以通过判断WriteStream.write的返回值。来暂停／开启读取，以此来控制速度。当然还有简单的方式那就是pipe。再改下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.createReadStream(&apos;./ss.js&apos;).pipe(process.stdout);</span><br></pre></td></tr></table></figure>
 <p>pipe内部实现了。读取数据速度的控制，保证丢失数据。</p>
-<p>最后给一个非常形象的pipe管道的图。<br><img src="http://ww4.sinaimg.cn/large/006tNbRwgw1f5h10vvncoj30rm0auwfx" alt=""><br>这是个双通道的管道，即可读又可写。</p>
+<p>最后给一个非常形象的pipe管道的图。<br><img src="//blog-indexof.img-cn-shanghai.aliyuncs.com/理解node stream.md/0.png" alt=""><br>这是个双通道的管道，即可读又可写。</p>
 
       
     </div>
