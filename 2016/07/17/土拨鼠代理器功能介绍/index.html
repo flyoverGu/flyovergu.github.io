@@ -94,15 +94,15 @@
 <meta property="og:url" content="http://flyovergu.github.io/2016/07/17/土拨鼠代理器功能介绍/index.html">
 <meta property="og:site_name" content="老村长的自留地">
 <meta property="og:description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。">
-<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/0.png">
-<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/1.png">
-<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/2.png">
-<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/3.png">
-<meta property="og:updated_time" content="2016-11-19T15:47:46.000Z">
+<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.oss-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/0.png">
+<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.oss-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/1.png">
+<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.oss-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/2.png">
+<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.oss-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/3.png">
+<meta property="og:updated_time" content="2016-11-19T16:00:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="土拨鼠代理器功能介绍">
 <meta name="twitter:description" content="这是个非常类似Fiddle,whistle等抓包神器。在跟国际接轨擦不上边的情况，只能做些中国特色的东西。就是我实现Fiddle的主要的代理功能，同时增加了mock数据和在线验证请求的功能。主要是我们平常开发的时候，会用到这些功能。">
-<meta name="twitter:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/0.png">
+<meta name="twitter:image" content="http://flyovergu.github.io//blog-indexof.oss-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/0.png">
 
 
 
@@ -318,13 +318,13 @@
 <h2 id="干啥用"><a href="#干啥用" class="headerlink" title="干啥用"></a>干啥用</h2><p>在前后端分离的项目中，或者是客户端开发的过程中。前端往往需要一个后台才能启动，也就是我们常常在项目中看到的用node写的index.js。一个简单的服务器，主要是为了返回静态资源并且代理mock数据。  </p>
 <p>但是我经历过各种项目，发现个项目的启动方式都不相同，有的用nginx，有的用node，而且端口，启动的首页也都不相同。在我切换项目的开发的时候，发现好难啊。我要想很久，然后看看代码，才知道正确的打开姿势TT。有时候还要问问负责项目的老司机。  </p>
 <p>土拨鼠就是提供了前端项目本地开发的所需要的环境。配置好项目请求mock数据路径，配置好资源请求代理规则。同时可以多配置，完全是我辈福音啊。妈妈再也不用担心我多项目切换了。不论是手机，pc，千牛，都可以。</p>
-<h2 id="颜值"><a href="#颜值" class="headerlink" title="颜值"></a>颜值</h2><p>首先土拨鼠的颜值确实不高。上个没有美颜的素照两张<br><img src="//blog-indexof.img-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/0.png" alt=""></p>
+<h2 id="颜值"><a href="#颜值" class="headerlink" title="颜值"></a>颜值</h2><p>首先土拨鼠的颜值确实不高。上个没有美颜的素照两张<br><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/0.png" alt=""></p>
 <hr>
-<p><img src="//blog-indexof.img-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/1.png" alt=""></p>
+<p><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/1.png" alt=""></p>
 <p>图1是代理的主界面，图2是配置界面。现在确实还比较素，那也说明还有提升的空间。同时作为设计脑残，想不出来好的设计交互，那就只能先把功能都平铺放出来，让人一下就明白。年轻人要注重内在美。</p>
 <h2 id="内在美"><a href="#内在美" class="headerlink" title="内在美"></a>内在美</h2><p>扯蛋完了，下面就讲讲怎么用吧。<br>首先开启软件，这里主要windows下千牛客户端为例，其他浏览器pc等都是类似的。软件的<br>下载地址我在文章最后提供。    </p>
-<h3 id="开启代理"><a href="#开启代理" class="headerlink" title="开启代理"></a>开启代理</h3><p><img src="//blog-indexof.img-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/2.png" alt=""><br>上面展示了，开启了代理，监控流量。首先设置千牛的代理设置，地址设成127.0.0.1端口是8888.然后就能看到千牛所有流量请求。包括资源和数据。</p>
-<h3 id="代理静态文件"><a href="#代理静态文件" class="headerlink" title="代理静态文件"></a>代理静态文件</h3><p><img src="//blog-indexof.img-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/3.png" alt=""><br>上面暂时了，在修改配置中增加配置。就可以代理到本地静态文件。配置mock数据路径，就可以代理到本地的mock数据。代理规则是支持正则表达式的，所以非常灵活。配置可以选择开启或者不开启，并且有多配置。</p>
+<h3 id="开启代理"><a href="#开启代理" class="headerlink" title="开启代理"></a>开启代理</h3><p><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/2.png" alt=""><br>上面展示了，开启了代理，监控流量。首先设置千牛的代理设置，地址设成127.0.0.1端口是8888.然后就能看到千牛所有流量请求。包括资源和数据。</p>
+<h3 id="代理静态文件"><a href="#代理静态文件" class="headerlink" title="代理静态文件"></a>代理静态文件</h3><p><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/土拨鼠代理器功能介绍.md/3.png" alt=""><br>上面暂时了，在修改配置中增加配置。就可以代理到本地静态文件。配置mock数据路径，就可以代理到本地的mock数据。代理规则是支持正则表达式的，所以非常灵活。配置可以选择开启或者不开启，并且有多配置。</p>
 <h3 id="Mock数据编写"><a href="#Mock数据编写" class="headerlink" title="Mock数据编写"></a>Mock数据编写</h3><p>mock数据的编写是支持js语法的。实际上是一个js的function，传入参数。这意味着你可以根据自己传入的参数，模拟多种情况。并且返回数据。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(params)&#123;</span><br><span class="line">	 if (params.status) &#123;</span><br><span class="line">	 	retrn &#123;</span><br><span class="line">	 		resule: 100</span><br><span class="line">	 	&#125;</span><br><span class="line">	 &#125; else return &#123;</span><br><span class="line">        &quot;api_name&quot;:&quot;active_deleteActive&quot;,</span><br><span class="line">        &quot;data&quot;:&#123;</span><br><span class="line">            &quot;status&quot;: true</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;result&quot;:100</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p>最后放出项目地址 <a href="https://github.com/flyoverGu/groundhog" target="_blank" rel="external">git</a> 如果觉得还不错就star下！！！<br>打包后的文件在release page</p>

@@ -94,12 +94,12 @@
 <meta property="og:url" content="http://flyovergu.github.io/2016/06/19/理解linux下文件权限问题/index.html">
 <meta property="og:site_name" content="老村长的自留地">
 <meta property="og:description" content="在我们开发的过程经常遇到Permission denied，权限不足。于是我们就用sudo xxx来解决这个问题。但是为什么会权限不足？权限不足的原因是什么？">
-<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/理解linux下文件权限问题.md/0.png">
-<meta property="og:updated_time" content="2016-11-19T15:47:57.000Z">
+<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.oss-cn-shanghai.aliyuncs.com/理解linux下文件权限问题.md/0.png">
+<meta property="og:updated_time" content="2016-11-19T16:00:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解linux下文件权限问题">
 <meta name="twitter:description" content="在我们开发的过程经常遇到Permission denied，权限不足。于是我们就用sudo xxx来解决这个问题。但是为什么会权限不足？权限不足的原因是什么？">
-<meta name="twitter:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/理解linux下文件权限问题.md/0.png">
+<meta name="twitter:image" content="http://flyovergu.github.io//blog-indexof.oss-cn-shanghai.aliyuncs.com/理解linux下文件权限问题.md/0.png">
 
 
 
@@ -313,7 +313,7 @@
 </blockquote>
 <a id="more"></a>
 <ol>
-<li><p>文件权限<br>在某目录下执行<code>ls -al</code>，可以看到一连串当前目录下文件或者文件夹的信息。像这样<img src="//blog-indexof.img-cn-shanghai.aliyuncs.com/理解linux下文件权限问题.md/0.png" alt="">其中就以圈起来文件做个介绍。<br><code>drwxr-xr-x  43 flyover  staff   1.4K Jun 17 16:44 fly</code><br><code>drwxr-xr-x</code>表示文件权限，第一个字母<code>d</code>表示文件夹，类似的还是<code>l</code>表示连接文件等。后面以三个字母为一组，分别是<code>rwx</code>,<code>r-x</code>,<code>r-x</code>表示第一组是owner的权限，第二组是group的权限，第三组是other的权限。其中<code>r</code>表示读权限，<code>w</code>表示写权限，<code>x</code>表示执行权限。<br><code>43</code>表示连接数。表示整个文件树中有多少个文件，与此文件连接。通俗的讲就是如果是文件的话就是1，如果是文件夹的话，表示下面有多少个文件。<br><code>flyover</code>就是文件owner。<br><code>staff</code>文件所属的文件组。<br><code>1.4k</code>表示文件大小。<br><code>Jun 7 16:44</code>表示最后修改时间。<br><code>fly</code>文件名。   </p>
+<li><p>文件权限<br>在某目录下执行<code>ls -al</code>，可以看到一连串当前目录下文件或者文件夹的信息。像这样<img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/理解linux下文件权限问题.md/0.png" alt="">其中就以圈起来文件做个介绍。<br><code>drwxr-xr-x  43 flyover  staff   1.4K Jun 17 16:44 fly</code><br><code>drwxr-xr-x</code>表示文件权限，第一个字母<code>d</code>表示文件夹，类似的还是<code>l</code>表示连接文件等。后面以三个字母为一组，分别是<code>rwx</code>,<code>r-x</code>,<code>r-x</code>表示第一组是owner的权限，第二组是group的权限，第三组是other的权限。其中<code>r</code>表示读权限，<code>w</code>表示写权限，<code>x</code>表示执行权限。<br><code>43</code>表示连接数。表示整个文件树中有多少个文件，与此文件连接。通俗的讲就是如果是文件的话就是1，如果是文件夹的话，表示下面有多少个文件。<br><code>flyover</code>就是文件owner。<br><code>staff</code>文件所属的文件组。<br><code>1.4k</code>表示文件大小。<br><code>Jun 7 16:44</code>表示最后修改时间。<br><code>fly</code>文件名。   </p>
 </li>
 <li><p>命令<br>修改文件属性的几个命令<br><code>chgrp</code>：改变文件所属的组。<br><code>chown</code>：文件owner。即修改拥有者。<br><code>chmod</code>：修改文件权限。</p>
 </li>

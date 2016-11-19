@@ -94,14 +94,14 @@
 <meta property="og:url" content="http://flyovergu.github.io/2016/05/21/哪些不为人知的实用chrome debug技巧/index.html">
 <meta property="og:site_name" content="老村长的自留地">
 <meta property="og:description" content="这个跟上一篇chrome开发功能是姐妹篇，都是‘不为人知’系列。哈哈～这篇主要讲一下在debug过程中，使用到的实用技巧。当然也比较小众的技巧。">
-<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/0.png">
-<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/1.png">
-<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/2.png">
-<meta property="og:updated_time" content="2016-11-19T15:46:04.000Z">
+<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.oss-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/0.png">
+<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.oss-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/1.png">
+<meta property="og:image" content="http://flyovergu.github.io//blog-indexof.oss-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/2.png">
+<meta property="og:updated_time" content="2016-11-19T15:59:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="哪些不为人知的实用chrome debug技巧">
 <meta name="twitter:description" content="这个跟上一篇chrome开发功能是姐妹篇，都是‘不为人知’系列。哈哈～这篇主要讲一下在debug过程中，使用到的实用技巧。当然也比较小众的技巧。">
-<meta name="twitter:image" content="http://flyovergu.github.io//blog-indexof.img-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/0.png">
+<meta name="twitter:image" content="http://flyovergu.github.io//blog-indexof.oss-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/0.png">
 
 
 
@@ -315,9 +315,9 @@
 </blockquote>
 <a id="more"></a>
 <ol>
-<li><p>编辑断点。chrome浏览器的debug本身做得非常程序员化，可以支持编辑断点。就是可以设置在什么情况下触发断点。这个功能当在循环语句中打断点的时候，非常有用！因为通常情况下并不是所有这个循环下的断点都要进。为了提高定位问题的速度，可以给断点增加一个条件，只有当条件语句为true时，才触发断点。<br> 看截图，在断点上右键，然后选Edit breakpoint<br><img src="//blog-indexof.img-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/0.png" alt="编辑断点1"><br> 此时写条件语句，只有当条件语句为<code>true</code>时，才触发断点。<br><img src="//blog-indexof.img-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/1.png" alt="编辑断点2"></p>
+<li><p>编辑断点。chrome浏览器的debug本身做得非常程序员化，可以支持编辑断点。就是可以设置在什么情况下触发断点。这个功能当在循环语句中打断点的时候，非常有用！因为通常情况下并不是所有这个循环下的断点都要进。为了提高定位问题的速度，可以给断点增加一个条件，只有当条件语句为true时，才触发断点。<br> 看截图，在断点上右键，然后选Edit breakpoint<br><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/0.png" alt="编辑断点1"><br> 此时写条件语句，只有当条件语句为<code>true</code>时，才触发断点。<br><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/1.png" alt="编辑断点2"></p>
 </li>
-<li><p>在断点处执行上下文环境下执行语句。这个功能其实大家都会用。但是大家用的流程是这样的：复制代码，然后打开console，粘贴代码，最后执行代码看看结果。其实还有更简单的方式，选中需要执行的代码，然后按快捷键<code>ctrl+shift+e</code>,就直接能在控制台看到执行结果。<br><img src="//blog-indexof.img-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/2.png" alt="执行选中语句"></p>
+<li><p>在断点处执行上下文环境下执行语句。这个功能其实大家都会用。但是大家用的流程是这样的：复制代码，然后打开console，粘贴代码，最后执行代码看看结果。其实还有更简单的方式，选中需要执行的代码，然后按快捷键<code>ctrl+shift+e</code>,就直接能在控制台看到执行结果。<br><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/哪些不为人知的实用chrome debug技巧.md/2.png" alt="执行选中语句"></p>
 </li>
 </ol>
 
