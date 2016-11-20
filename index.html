@@ -88,15 +88,15 @@
 
 
 
-<meta name="description">
+<meta name="description" content="生活不只是今日的苟且, 还有明天的苟且.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="老村长的自留地">
+<meta property="og:title" content="indexOf的博客">
 <meta property="og:url" content="http://indexof.site/index.html">
-<meta property="og:site_name" content="老村长的自留地">
-<meta property="og:description">
+<meta property="og:site_name" content="indexOf的博客">
+<meta property="og:description" content="生活不只是今日的苟且, 还有明天的苟且.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老村长的自留地">
-<meta name="twitter:description">
+<meta name="twitter:title" content="indexOf的博客">
+<meta name="twitter:description" content="生活不只是今日的苟且, 还有明天的苟且.">
 
 
 
@@ -119,7 +119,7 @@
 
   <link rel="canonical" href="http://indexof.site/"/>
 
-  <title> 老村长的自留地 </title>
+  <title> indexOf的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -161,11 +161,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">老村长的自留地</span>
+      <span class="site-title">indexOf的博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">他好像一条狗</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -239,6 +239,123 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/20/博客升级成https记录/" itemprop="url">
+                  博客升级成https记录
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-20T13:21:16+08:00" content="2016-11-20">
+              2016-11-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/20/博客升级成https记录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/20/博客升级成https记录/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://www.zhihu.com/question/47481250" target="_blank" rel="external">苹果公司要求开发者在2017年前全部采用HTTPS</a>, 既然是这样我的博客也就顺势升级成https. 博客也已经从git page放到了自己服务器, 可玩性和可控性变高很多.</p>
+</blockquote>
+<h2 id="获取证书-amp-部署"><a href="#获取证书-amp-部署" class="headerlink" title="获取证书&amp;部署"></a>获取证书&amp;部署</h2><p>网上教程一大推, 我是参照ququ大神的这篇<a href="https://imququ.com/post/letsencrypt-certificate.html" target="_blank" rel="external">博客</a>的,<br>穷屌丝没钱,只能用免费的https服务. 既然ququ大神都用了, 基本不会差到哪里去.</p>
+<h2 id="问题-amp-解决"><a href="#问题-amp-解决" class="headerlink" title="问题&amp;解决"></a>问题&amp;解决</h2><p>大神的博客写的非常详细, 基本上跟着流程走下来, 部署完成没什么问题的. 但是最后我发现我博客<a href="https://indexOf.site依旧打不开" target="_blank" rel="external">https://indexOf.site依旧打不开</a>. 显示无法连接, 想了一会儿才想到, 我的服务器设置安全组.<br>https的默认端口是443, 而安全组我是没开443端口 TT. 打开443端口之后,果然能够访问了. </p>
+<p>但是 </p>
+<p><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/博客升级成https记录.md/0.png" alt=""></p>
+<p><em>怎么不是我心目中的小绿锁！！！怎么是灰色的？？？</em></p>
+<p>点开chrome的提示，看到<br><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/博客升级成https记录.md/1.png" alt=""><br>可以很清楚的定位到问题Mixed Content，就是因为我站内有非https的内容。<br>我文章中的各种图片全是http的请求，虽然能访问到，但是不是小绿锁，心有不甘啊。</p>
+<p>我之前写文章的时候没注意都是直接用<a href="http://toolinbox.net/iPic/" target="_blank" rel="external">ipic</a>直接上传到新浪上的， 而新浪并不支持https。。。<br>没办法只能全部替换掉。<br>于是写了个脚本， 把每篇文章中的图片地址找出来, 然后下载图片，再上传到Ali oss上去。 最后替换文章中原来的图片地址。</p>
+<p>做完这些之后， 刷新。<br><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/博客升级成https记录.md/2.png" alt=""><br>完美小的小绿锁就出现了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后归纳下， 划下重点</p>
+<ol>
+<li>https默认走443端口</li>
+<li>站内有http请求会有警告(但并不是不能访问)</li>
+<li>七牛也不支持https的访问的。aliyun的oss可以。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -1214,111 +1331,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/04/搜索算法/" itemprop="url">
-                  搜索算法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-04T17:30:16+08:00" content="2016-06-04">
-              2016-06-04
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/04/搜索算法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/搜索算法/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>在众多算法中，普通屌丝能把(zhuang)玩(bi)一下，并且相对简单又非常实用的算法，就是搜索啦。      </p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/04/搜索算法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1359,12 +1371,12 @@
                src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/avatar.jpg"
                alt="Flyover" />
           <p class="site-author-name" itemprop="name">Flyover</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          <p class="site-description motion-element" itemprop="description">生活不只是今日的苟且, 还有明天的苟且.</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1374,7 +1386,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -93,7 +93,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="A star 寻路算法">
 <meta property="og:url" content="http://indexof.site/2016/05/07/A star 寻路算法/index.html">
-<meta property="og:site_name" content="老村长的自留地">
+<meta property="og:site_name" content="indexOf的博客">
 <meta property="og:description" content="基本上就是在最短路算法上，增加了优先对列或者叫评估函数。其作用就是有方向性的寻找目标，去掉那些一定不正确的路。以此达到性能上的优化。
 看看demo, 黑色点是开始点，红色是墙，白色是目标节点。">
 <meta property="og:updated_time" content="2016-07-25T08:19:14.000Z">
@@ -123,7 +123,7 @@
 
   <link rel="canonical" href="http://indexof.site/2016/05/07/A star 寻路算法/"/>
 
-  <title> A star 寻路算法 | 老村长的自留地 </title>
+  <title> A star 寻路算法 | indexOf的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -163,11 +163,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">老村长的自留地</span>
+      <span class="site-title">indexOf的博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">他好像一条狗</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -310,7 +310,7 @@
 
       
         <p>基本上就是在最短路算法上，增加了优先对列或者叫评估函数。其作用就是有方向性的寻找目标，去掉那些一定不正确的路。以此达到性能上的优化。</p>
-<p>看看<a href="http://flyovergu.github.io/labs/aStar/index.html">demo</a>, 黑色点是开始点，红色是墙，白色是目标节点。</p>
+<p>看看<a href="http://flyovergu.github.io/labs/aStar/index.html" target="_blank" rel="external">demo</a>, 黑色点是开始点，红色是墙，白色是目标节点。</p>
 <a id="more"></a>
 <p>贴一下关键代码，源码在demo中都有。  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">function g() &#123;</span><br><span class="line">    var start = &#123;</span><br><span class="line">        x: 3,</span><br><span class="line">        y: 1</span><br><span class="line">    &#125;;</span><br><span class="line">    var end = &#123;</span><br><span class="line">        x: 3,</span><br><span class="line">        y: 5</span><br><span class="line">    &#125;;</span><br><span class="line">    // 优先队列</span><br><span class="line">    var q = [],</span><br><span class="line">        now, hash = &#123;&#125;;</span><br><span class="line">    q.push(start);</span><br><span class="line">    while (now = q.pop()) &#123;</span><br><span class="line">        console.log(now.x, now.y);</span><br><span class="line">        if (hash[now.x + &apos;&apos; + now.y]) &#123;</span><br><span class="line">            // 已经走过了 </span><br><span class="line">            continue;</span><br><span class="line">        &#125;</span><br><span class="line">        if (now.x &lt; 0 || now.x &gt;= H || now.y &lt; 0 || now.y &gt;= W) &#123;</span><br><span class="line">            // 超出地图了</span><br><span class="line">            continue;</span><br><span class="line">        &#125;</span><br><span class="line">        if (!~map[now.x][now.y]) &#123;</span><br><span class="line">            // 撞墙了</span><br><span class="line">            continue;</span><br><span class="line">        &#125;</span><br><span class="line">        if (now.x == end.x &amp;&amp; now.y == end.y) &#123;</span><br><span class="line">            console.log(&apos;found&apos;);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        map[now.x][now.y] = 1;</span><br><span class="line">        hash[now.x + &apos;&apos; + now.y] = true;</span><br><span class="line">        render();</span><br><span class="line">        $.map(dir, (i) =&gt; &#123;</span><br><span class="line">            var cx = now.x + i[0],</span><br><span class="line">                cy = now.y + i[1]</span><br><span class="line">            q.push(&#123;</span><br><span class="line">                x: cx,</span><br><span class="line">                y: cy,</span><br><span class="line">                v: h(&#123;</span><br><span class="line">                    x: cx,</span><br><span class="line">                    y: cy</span><br><span class="line">                &#125;, end)</span><br><span class="line">            &#125;);</span><br><span class="line">            //console.log(&apos;q&apos;, q);</span><br><span class="line">        &#125;);</span><br><span class="line">        q.sort((a, b) =&gt; &#123;</span><br><span class="line">            if (a.v &gt; b.v) return -1;</span><br><span class="line">            else return 1;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -424,12 +424,12 @@
                src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/avatar.jpg"
                alt="Flyover" />
           <p class="site-author-name" itemprop="name">Flyover</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          <p class="site-description motion-element" itemprop="description">生活不只是今日的苟且, 还有明天的苟且.</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -439,7 +439,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
