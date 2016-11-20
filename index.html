@@ -311,26 +311,15 @@
 
       
         
-          
-            <blockquote>
-<p><a href="https://www.zhihu.com/question/47481250" target="_blank" rel="external">苹果公司要求开发者在2017年前全部采用HTTPS</a>, 既然是这样我的博客也就顺势升级成https. 博客也已经从git page放到了自己服务器, 可玩性和可控性变高很多.</p>
+          <blockquote>
+<p><a href="https://www.zhihu.com/question/47481250">苹果公司要求开发者在2017年前全部采用HTTPS</a>, 既然是这样我的博客也就顺势升级成https. 博客也已经从git page放到了自己服务器, 可玩性和可控性变高很多.</p>
 </blockquote>
-<h2 id="获取证书-amp-部署"><a href="#获取证书-amp-部署" class="headerlink" title="获取证书&amp;部署"></a>获取证书&amp;部署</h2><p>网上教程一大推, 我是参照ququ大神的这篇<a href="https://imququ.com/post/letsencrypt-certificate.html" target="_blank" rel="external">博客</a>的,<br>穷屌丝没钱,只能用免费的https服务. 既然ququ大神都用了, 基本不会差到哪里去.</p>
-<h2 id="问题-amp-解决"><a href="#问题-amp-解决" class="headerlink" title="问题&amp;解决"></a>问题&amp;解决</h2><p>大神的博客写的非常详细, 基本上跟着流程走下来, 部署完成没什么问题的. 但是最后我发现我博客<a href="https://indexOf.site依旧打不开" target="_blank" rel="external">https://indexOf.site依旧打不开</a>. 显示无法连接, 想了一会儿才想到, 我的服务器设置安全组.<br>https的默认端口是443, 而安全组我是没开443端口 TT. 打开443端口之后,果然能够访问了. </p>
-<p>但是 </p>
-<p><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/博客升级成https记录.md/0.png" alt=""></p>
-<p><em>怎么不是我心目中的小绿锁！！！怎么是灰色的？？？</em></p>
-<p>点开chrome的提示，看到<br><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/博客升级成https记录.md/1.png" alt=""><br>可以很清楚的定位到问题Mixed Content，就是因为我站内有非https的内容。<br>我文章中的各种图片全是http的请求，虽然能访问到，但是不是小绿锁，心有不甘啊。</p>
-<p>我之前写文章的时候没注意都是直接用<a href="http://toolinbox.net/iPic/" target="_blank" rel="external">ipic</a>直接上传到新浪上的， 而新浪并不支持https。。。<br>没办法只能全部替换掉。<br>于是写了个脚本， 把每篇文章中的图片地址找出来, 然后下载图片，再上传到Ali oss上去。 最后替换文章中原来的图片地址。</p>
-<p>做完这些之后， 刷新。<br><img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/博客升级成https记录.md/2.png" alt=""><br>完美小的小绿锁就出现了。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后归纳下， 划下重点</p>
-<ol>
-<li>https默认走443端口</li>
-<li>站内有http请求会有警告(但并不是不能访问)</li>
-<li>七牛也不支持https的访问的。aliyun的oss可以。</li>
-</ol>
-
-          
+<h2 id="获取证书-amp-部署"><a href="#获取证书-amp-部署" class="headerlink" title="获取证书&amp;部署"></a>获取证书&amp;部署</h2><p>网上教程一大推, 我是参照ququ大神的这篇<a href="https://imququ.com/post/letsencrypt-certificate.html">博客</a>的,<br>穷屌丝没钱,只能用免费的https服务. 既然ququ大神都用了, 基本不会差到哪里去.</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/20/博客升级成https记录/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
