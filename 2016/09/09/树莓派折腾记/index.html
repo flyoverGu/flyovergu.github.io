@@ -88,38 +88,17 @@
 
 
 
-<meta name="description" content="好久没更新了，忙各种生活和工作的事，当时主要还是自己偷懒。今天记录下之前折腾过的树莓派安装系统和配置。
-
-安装系统(mac)
-下载系统https://www.raspberrypi.org/downloads/raspbian/
-解压压缩包，最后等到一个img文件。
-然后开始烧录系统
- 12// 查看sd卡对应dev路径编号diskutil list
- 得到 一般sd卡的路径是/dev/disk">
+<meta name="description" content="好久没更新了，忙各种生活和工作的事，当时主要还是自己偷懒。今天记录下之前折腾过的树莓派安装系统和配置。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派折腾记">
 <meta property="og:url" content="http://indexof.site/2016/09/09/树莓派折腾记/index.html">
 <meta property="og:site_name" content="indexOf的博客">
-<meta property="og:description" content="好久没更新了，忙各种生活和工作的事，当时主要还是自己偷懒。今天记录下之前折腾过的树莓派安装系统和配置。
-
-安装系统(mac)
-下载系统https://www.raspberrypi.org/downloads/raspbian/
-解压压缩包，最后等到一个img文件。
-然后开始烧录系统
- 12// 查看sd卡对应dev路径编号diskutil list
- 得到 一般sd卡的路径是/dev/disk">
+<meta property="og:description" content="好久没更新了，忙各种生活和工作的事，当时主要还是自己偷懒。今天记录下之前折腾过的树莓派安装系统和配置。">
 <meta property="og:image" content="http://indexof.site//blog-indexof.oss-cn-shanghai.aliyuncs.com/树莓派折腾记.md/0.png">
-<meta property="og:updated_time" content="2016-11-20T10:00:13.000Z">
+<meta property="og:updated_time" content="2016-12-19T09:17:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派折腾记">
-<meta name="twitter:description" content="好久没更新了，忙各种生活和工作的事，当时主要还是自己偷懒。今天记录下之前折腾过的树莓派安装系统和配置。
-
-安装系统(mac)
-下载系统https://www.raspberrypi.org/downloads/raspbian/
-解压压缩包，最后等到一个img文件。
-然后开始烧录系统
- 12// 查看sd卡对应dev路径编号diskutil list
- 得到 一般sd卡的路径是/dev/disk">
+<meta name="twitter:description" content="好久没更新了，忙各种生活和工作的事，当时主要还是自己偷懒。今天记录下之前折腾过的树莓派安装系统和配置。">
 <meta name="twitter:image" content="http://indexof.site//blog-indexof.oss-cn-shanghai.aliyuncs.com/树莓派折腾记.md/0.png">
 
 
@@ -332,6 +311,7 @@
         <blockquote>
 <p>好久没更新了，忙各种生活和工作的事，当时主要还是自己偷懒。今天记录下之前折腾过的树莓派安装系统和配置。</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="安装系统-mac"><a href="#安装系统-mac" class="headerlink" title="安装系统(mac)"></a>安装系统(mac)</h3><ol>
 <li>下载系统<a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">https://www.raspberrypi.org/downloads/raspbian/</a></li>
 <li>解压压缩包，最后等到一个img文件。</li>
@@ -342,7 +322,6 @@
 </li>
 </ol>
 <p>ps: 这里有人说有树莓派sd卡兼容性问题。但是笔者测试了一款不兼容的sd卡也能正常使用。但是切记一定要先格式化。</p>
-<a id="more"></a>
 <h3 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h3><p>修改interfaces文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/network/interfaces</span><br></pre></td></tr></table></figure>
 <p>修改成</p>
