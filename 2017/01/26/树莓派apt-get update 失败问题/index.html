@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="node,爬虫," />
+  <meta name="keywords" content="树莓派,问题解决系列," />
 
 
 
@@ -88,33 +88,19 @@
 
 
 
-<meta name="description" content="其实node写爬虫并不是特别合适，主要的原因，就是库的支持程度没有python那么高了。当然本着学习node的态度还是可以的。网上教用node写爬虫的一大堆，我这里不具体讲，怎么爬。就写写大体上的思路和可能会遇到的一些问题。
-
-首先先给出几个node写爬虫的几个简单教程   
-
-使用 superagent 与 cheerio 完成简单爬虫     
-NodeJS写个爬虫，把文章放到kindle中">
+<meta name="description" content="把树莓派捣鼓完系统之后，第一步就是sudo apt-get update更新软件列表。但是出现了如下错误
+12Err http://archive.raspberrypi.org jessie Release.gpg 	Could not resolve &amp;apos;archive.raspberrypi.org&amp;apos;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node爬虫">
-<meta property="og:url" content="http://indexof.site/2016/07/25/node爬虫/index.html">
+<meta property="og:title" content="Could not resolve 'archive.raspberrypi.org'问题">
+<meta property="og:url" content="http://indexof.site/2017/01/26/树莓派apt-get update 失败问题/index.html">
 <meta property="og:site_name" content="indexOf的博客">
-<meta property="og:description" content="其实node写爬虫并不是特别合适，主要的原因，就是库的支持程度没有python那么高了。当然本着学习node的态度还是可以的。网上教用node写爬虫的一大堆，我这里不具体讲，怎么爬。就写写大体上的思路和可能会遇到的一些问题。
-
-首先先给出几个node写爬虫的几个简单教程   
-
-使用 superagent 与 cheerio 完成简单爬虫     
-NodeJS写个爬虫，把文章放到kindle中">
-<meta property="og:image" content="http://indexof.site//blog-indexof.oss-cn-shanghai.aliyuncs.com/node爬虫.md/0.png">
-<meta property="og:updated_time" content="2016-11-20T10:00:13.000Z">
+<meta property="og:description" content="把树莓派捣鼓完系统之后，第一步就是sudo apt-get update更新软件列表。但是出现了如下错误
+12Err http://archive.raspberrypi.org jessie Release.gpg 	Could not resolve &amp;apos;archive.raspberrypi.org&amp;apos;">
+<meta property="og:updated_time" content="2017-01-26T14:35:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node爬虫">
-<meta name="twitter:description" content="其实node写爬虫并不是特别合适，主要的原因，就是库的支持程度没有python那么高了。当然本着学习node的态度还是可以的。网上教用node写爬虫的一大堆，我这里不具体讲，怎么爬。就写写大体上的思路和可能会遇到的一些问题。
-
-首先先给出几个node写爬虫的几个简单教程   
-
-使用 superagent 与 cheerio 完成简单爬虫     
-NodeJS写个爬虫，把文章放到kindle中">
-<meta name="twitter:image" content="http://indexof.site//blog-indexof.oss-cn-shanghai.aliyuncs.com/node爬虫.md/0.png">
+<meta name="twitter:title" content="Could not resolve 'archive.raspberrypi.org'问题">
+<meta name="twitter:description" content="把树莓派捣鼓完系统之后，第一步就是sudo apt-get update更新软件列表。但是出现了如下错误
+12Err http://archive.raspberrypi.org jessie Release.gpg 	Could not resolve &amp;apos;archive.raspberrypi.org&amp;apos;">
 
 
 
@@ -135,9 +121,9 @@ NodeJS写个爬虫，把文章放到kindle中">
 
 
 
-  <link rel="canonical" href="http://indexof.site/2016/07/25/node爬虫/"/>
+  <link rel="canonical" href="http://indexof.site/2017/01/26/树莓派apt-get update 失败问题/"/>
 
-  <title> node爬虫 | indexOf的博客 </title>
+  <title> Could not resolve 'archive.raspberrypi.org'问题 | indexOf的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -276,7 +262,7 @@ NodeJS写个爬虫，把文章放到kindle中">
             
             
               
-                node爬虫
+                Could not resolve 'archive.raspberrypi.org'问题
               
             
           </h1>
@@ -288,8 +274,8 @@ NodeJS写个爬虫，把文章放到kindle中">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-25T14:30:59+08:00" content="2016-07-25">
-              2016-07-25
+            <time itemprop="dateCreated" datetime="2017-01-26T22:20:07+08:00" content="2017-01-26">
+              2017-01-26
             </time>
           </span>
 
@@ -299,8 +285,8 @@ NodeJS写个爬虫，把文章放到kindle中">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/25/node爬虫/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/node爬虫/" itemprop="commentsCount"></span>
+                <a href="/2017/01/26/树莓派apt-get update 失败问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/树莓派apt-get update 失败问题/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -323,26 +309,15 @@ NodeJS写个爬虫，把文章放到kindle中">
       
 
       
-        <blockquote>
-<p>其实node写爬虫并不是特别合适，主要的原因，就是库的支持程度没有python那么高了。当然本着学习node的态度还是可以的。网上教用node写爬虫的一大堆，我这里不具体讲，怎么爬。就写写大体上的思路和可能会遇到的一些问题。</p>
-</blockquote>
-<p>首先先给出几个node写爬虫的几个简单教程   </p>
-<ol>
-<li><a href="https://github.com/alsotang/node-lessons/tree/master/lesson3" target="_blank" rel="external">使用 superagent 与 cheerio 完成简单爬虫</a>     </li>
-<li><a href="http://www.cnblogs.com/hustskyking/p/spider-with-node.html" target="_blank" rel="external">NodeJS写个爬虫，把文章放到kindle中阅读</a>   </li>
-<li><a href="http://blog.didispace.com/nodejspachong/" target="_blank" rel="external">使用Node.js制作爬虫教程</a><a id="more"></a>
-</li>
-</ol>
-<p>想用node写爬虫的小白同学可以照着学一下。<br>然后我这边就主要讲一下爬虫思路。<br>所谓爬虫无非是要别人的网站页面上，获取到有价值的信息并保存下来。<br>那么流程上就成了：<img src="//blog-indexof.oss-cn-shanghai.aliyuncs.com/node爬虫.md/0.png" alt=""><br>一个环节一个环节简单说下。除了数据分析，因为我不会。。。。  </p>
-<ol>
-<li>获取html就是用node发请求取获取指定网站上的html源码。在这个步骤上，还是有蛮多库可以选择的。当然也可用原生node的http库做这个事。 其他三方库也是蛮多的，比如：<a href="https://github.com/request/request" target="_blank" rel="external">request</a>, <a href="https://github.com/visionmedia/superagent" target="_blank" rel="external">superagent</a>,etc。<br><strong><em>这里需要注意的事</em></strong>， 当请求一下子发太多，因为网络问题，会导致大量请求失败。所以这里最好引入一个三方库（<a href="https://github.com/tj/co" target="_blank" rel="external">co</a>, <a href="https://github.com/caolan/async" target="_blank" rel="external">async</a>），来控制请求数。保证一下子请求不要太多。</li>
-<li>分析html。简单的可以直接用正则表达式，复杂的可以用<a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="external">cheerio</a>，这个库基本上就是node端的jquery。所以用jq获取页面的对应信息还是比较简单的。<br><strong><em>当然也有坑</em></strong>, 当直接能获取到html源码的网页，用这种方式当然可以了。但是想新浪微博之类的把html写在js代码里，需要运行js才能渲染出页面的网站。就是自己稍稍动动脑筋，用<code>eval</code>执行下js，还是能渲染页面的。但是如果遇到spa框架写的页面。那基本上就没戏了。<br>需要换方案解决，可以用<a href="http://phantomjs.org/" target="_blank" rel="external">phantomjs</a>之类的无头浏览器。正常访问页面，然后正常获取数据的方式来做。     </li>
-<li>保存数据基本上很简单了。自己玩玩的项目可以直接用fs写文件。大项目需要做数据分析的就放入数据库。</li>
-<li>分析大量数据。不会。。。。。。</li>
-</ol>
-<blockquote>
-<p>以上就是我对node爬虫的一些认识。</p>
-</blockquote>
+        <p>把树莓派捣鼓完系统之后，第一步就是<code>sudo apt-get update</code>更新软件列表。但是出现了如下错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Err http://archive.raspberrypi.org jessie Release.gpg </span><br><span class="line">	Could not resolve &apos;archive.raspberrypi.org&apos;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>基本上可以判断是dns服务器没法解析archive.raspberrypi.org这个域名。这个可能跟墙有关系。当然没关系。我们可以通过修改hosts文件，来达到本地解析的目的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/hosts</span><br></pre></td></tr></table></figure>
+<p>然后在最后加上一行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">93.93.128.133   archive.raspberrypi.org</span><br></pre></td></tr></table></figure>
+<p>把archive.raspberrypi.org解析到93.93.128.133这个IP上。</p>
+<p>然后又可以愉快得执行<code>sudo apt-get update</code></p>
 
       
     </div>
@@ -365,9 +340,9 @@ NodeJS写个爬虫，把文章放到kindle中">
       
         <div class="post-tags">
           
-            <a href="/tags/node/" rel="tag">#node</a>
+            <a href="/tags/树莓派/" rel="tag">#树莓派</a>
           
-            <a href="/tags/爬虫/" rel="tag">#爬虫</a>
+            <a href="/tags/问题解决系列/" rel="tag">#问题解决系列</a>
           
         </div>
       
@@ -376,17 +351,13 @@ NodeJS写个爬虫，把文章放到kindle中">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/17/土拨鼠代理器功能介绍/" rel="next" title="土拨鼠代理器功能介绍">
-                <i class="fa fa-chevron-left"></i> 土拨鼠代理器功能介绍
+              <a href="/2016/12/23/测试/" rel="next" title="测试">
+                <i class="fa fa-chevron-left"></i> 测试
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/27/shadowsock免费赠送计划/" rel="prev" title="shadowsocks免费赠送计划-(已暂定)">
-                shadowsocks免费赠送计划-(已暂定) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -412,8 +383,8 @@ NodeJS写个爬虫，把文章放到kindle中">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/25/node爬虫/"
-           data-title="node爬虫" data-url="http://indexof.site/2016/07/25/node爬虫/">
+      <div class="ds-thread" data-thread-key="2017/01/26/树莓派apt-get update 失败问题/"
+           data-title="Could not resolve 'archive.raspberrypi.org'问题" data-url="http://indexof.site/2017/01/26/树莓派apt-get update 失败问题/">
       </div>
     
   </div>
