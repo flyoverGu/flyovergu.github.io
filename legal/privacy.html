@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>萝卜弹幕隐私政策</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --text: #202124;
+      --muted: #62645f;
+      --line: #deded8;
+      --panel: #ffffff;
+      --accent: #1d7f5b;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #151613;
+        --text: #f0f1ec;
+        --muted: #b8bbb1;
+        --line: #30322c;
+        --panel: #1d1f1a;
+        --accent: #71d4a5;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    header {
+      padding: 32px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 36px 0 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: 22px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    p,
+    li {
+      font-size: 16px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .meta,
+    .note {
+      color: var(--muted);
+    }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--panel), transparent 16%);
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 520px) {
+      main {
+        width: min(100% - 24px, 920px);
+        padding: 24px 0 40px;
+      }
+
+      header {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>萝卜弹幕隐私政策</h1>
+      <p class="meta">生效日期：2026年6月8日</p>
+      <p class="meta">开发者/运营者：【请填写开发者或公司名称】</p>
+      <p class="meta">联系邮箱：【请填写联系邮箱】</p>
+      <p class="note">发布前请替换上方主体信息和联系方式。如后续加入登录、广告、统计、云同步、客服系统或第三方 SDK，应同步更新本政策和 App Store Connect 隐私问卷。</p>
+    </header>
+
+    <h2>一、适用范围</h2>
+    <p>本隐私政策适用于 iOS 应用“萝卜弹幕”（以下简称“本应用”）。本应用是一款用于编辑、预览、全屏展示弹幕文字，并将弹幕效果导出为视频保存到系统相册的本地工具。</p>
+
+    <h2>二、我们如何处理信息</h2>
+    <p>当前版本不提供账号注册或登录功能，不接入广告、统计分析、社交分享、云同步或第三方 SDK。我们不会主动收集姓名、手机号、邮箱、身份证号、通讯录、位置、设备广告标识符等个人信息。</p>
+    <p>为了提供核心功能，本应用会在你的设备本地处理以下信息：</p>
+    <ul>
+      <li>弹幕文字：用于在本机预览、全屏展示和生成视频。</li>
+      <li>弹幕配置：包括皮肤、模板、速度、字号、字体、文字颜色和背景颜色等设置。</li>
+      <li>导出文件：当你选择保存视频时，本应用会在设备本地生成临时视频文件，并请求将生成的视频添加到系统相册。</li>
+    </ul>
+    <p>上述信息默认仅保存在你的设备本地，不会上传到我们的服务器。</p>
+
+    <h2>三、系统权限说明</h2>
+    <p>本应用可能请求以下系统权限：</p>
+    <ul>
+      <li>相册添加权限：用于将你生成的弹幕视频保存到系统相册。本应用仅请求添加内容到相册的权限，不需要读取你的相册内容。</li>
+    </ul>
+    <p>如果你拒绝相册添加权限，仍可以使用弹幕编辑、预览和全屏展示功能，但可能无法直接保存生成的视频到系统相册。你可以在 iOS“设置”中管理相关权限。</p>
+
+    <h2>四、本地存储</h2>
+    <p>本应用会使用 iOS 本地存储保存你的弹幕文字和常用配置，以便下次打开应用时恢复上次使用状态。这些数据保存在你的设备上，删除本应用通常会删除这些本地配置。已经保存到系统相册的视频，需要你在“照片”App 中自行管理或删除。</p>
+
+    <h2>五、信息共享、转让和公开披露</h2>
+    <p>当前版本不向第三方共享、转让或公开披露你的个人信息。若法律法规、司法机关或行政机关依法要求提供信息，我们会在符合法律要求的范围内处理。</p>
+
+    <h2>六、未成年人保护</h2>
+    <p>本应用不是专门面向儿童的产品。未成年人使用本应用前，应取得监护人的同意和指导。如果监护人认为未成年人在使用本应用过程中产生了需要处理的个人信息，可通过本政策列明的联系方式与我们联系。</p>
+
+    <h2>七、跨境传输</h2>
+    <p>当前版本不通过服务器收集或传输你的个人信息，因此不存在由本应用主动发起的个人信息跨境传输。若后续功能发生变化，我们会更新本政策并按适用法律要求处理。</p>
+
+    <h2>八、政策更新</h2>
+    <p>我们可能会根据产品功能、法律法规或审核要求更新本隐私政策。更新后的政策会通过 App 内入口或公开页面展示，并以页面标注的生效日期为准。</p>
+
+    <h2>九、联系我们</h2>
+    <p>如你对本隐私政策或个人信息处理有任何问题、意见或请求，请通过以下方式联系我们：</p>
+    <p>开发者/运营者：【请填写开发者或公司名称】</p>
+    <p>联系邮箱：【请填写联系邮箱】</p>
+
+    <footer>
+      <p><a href="terms.html">查看《萝卜弹幕用户协议》</a></p>
+    </footer>
+  </main>
+</body>
+</html>
