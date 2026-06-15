@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>萝卜弹幕技术支持</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f4;
+      --text: #202124;
+      --muted: #62645f;
+      --line: #deded8;
+      --panel: #ffffff;
+      --accent: #1d7f5b;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #151613;
+        --text: #f0f1ec;
+        --muted: #b8bbb1;
+        --line: #30322c;
+        --panel: #1d1f1a;
+        --accent: #71d4a5;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    header {
+      padding: 32px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 36px 0 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: 22px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    p,
+    li {
+      font-size: 16px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .meta,
+    .note {
+      color: var(--muted);
+    }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--panel), transparent 16%);
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 520px) {
+      main {
+        width: min(100% - 24px, 920px);
+        padding: 24px 0 40px;
+      }
+
+      header {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>萝卜弹幕技术支持</h1>
+      <p class="meta">更新日期：2026年6月15日</p>
+      <p class="meta">联系邮箱：<a href="mailto:gumpggu@gmail.com">gumpggu@gmail.com</a></p>
+      <p class="note">如果你在使用弹幕编辑、全屏展示、模板皮肤或视频导出功能时遇到问题，可以通过本页的联系方式反馈。</p>
+    </header>
+
+    <h2>一、支持范围</h2>
+    <p>本页面适用于 iOS 应用“萝卜弹幕”的技术支持。我们可以协助处理应用安装、功能使用、权限设置、弹幕预览、全屏展示、视频导出和保存到相册等相关问题。</p>
+
+    <h2>二、联系我们</h2>
+    <p>如需技术支持，请发送邮件至：<a href="mailto:gumpggu@gmail.com">gumpggu@gmail.com</a></p>
+    <p>为了更快定位问题，建议在邮件中提供以下信息：</p>
+    <ul>
+      <li>你的设备型号和 iOS 系统版本。</li>
+      <li>萝卜弹幕的应用版本号。</li>
+      <li>问题发生前的具体操作步骤。</li>
+      <li>相关截图、录屏或系统提示文案。</li>
+      <li>问题是否可以稳定复现，以及你已经尝试过的处理方式。</li>
+    </ul>
+
+    <h2>三、常见问题</h2>
+    <p><strong>无法保存视频到相册怎么办？</strong></p>
+    <p>请确认已允许本应用添加内容到系统相册。你可以前往 iOS“设置”中找到萝卜弹幕，并检查相册相关权限。如果仍无法保存，请重启应用后再次尝试。</p>
+
+    <p><strong>导出视频需要很久是否正常？</strong></p>
+    <p>视频导出时间会受到弹幕数量、视频时长、设备性能和当前系统负载影响。建议在导出过程中保持应用在前台运行，并避免同时进行大量后台任务。</p>
+
+    <p><strong>为什么预览效果和导出视频略有差异？</strong></p>
+    <p>实时预览和视频生成使用的渲染环境不同，部分字体、字号、动画速度或颜色显示可能存在细微差异。若发现明显异常，请提供截图或录屏协助排查。</p>
+
+    <p><strong>卸载应用后本地数据还会保留吗？</strong></p>
+    <p>本应用的弹幕文字和配置默认保存在设备本地。卸载应用通常会删除这些本地配置；已经保存到系统相册的视频需要在“照片”App 中自行管理。</p>
+
+    <h2>四、问题反馈处理</h2>
+    <p>收到反馈后，我们会根据问题信息进行排查。对于由系统权限、设备存储空间、iOS 版本差异或 App Store 审核规则变化导致的问题，可能需要结合具体设备环境进一步确认。</p>
+
+    <h2>五、相关页面</h2>
+    <p>你也可以阅读以下页面了解使用规则和隐私说明：</p>
+    <ul>
+      <li><a href="privacy.html">《萝卜弹幕隐私政策》</a></li>
+      <li><a href="terms.html">《萝卜弹幕用户协议》</a></li>
+    </ul>
+
+    <footer>
+      <p>萝卜弹幕技术支持页面</p>
+    </footer>
+  </main>
+</body>
+</html>
