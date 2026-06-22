@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App Store 打开测试</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f7f8;
+      --text: #202124;
+      --muted: #62666d;
+      --line: #dfe3e8;
+      --panel: #ffffff;
+      --accent: #0a84ff;
+      --accent-text: #ffffff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121417;
+        --text: #f1f3f5;
+        --muted: #aeb4bc;
+        --line: #30363d;
+        --panel: #1b1f24;
+        --accent: #5eb0ff;
+        --accent-text: #06111f;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+    }
+
+    main {
+      width: min(720px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    header,
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    header {
+      padding: 28px;
+      margin-bottom: 18px;
+    }
+
+    section {
+      padding: 18px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .button {
+      display: block;
+      min-height: 52px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: var(--accent-text);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.35;
+      text-align: center;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .button:active {
+      transform: translateY(1px);
+    }
+
+    .url {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      opacity: .88;
+    }
+
+    .status {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 520px) {
+      main {
+        width: min(100% - 24px, 720px);
+        padding: 24px 0 40px;
+      }
+
+      header {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>App Store 打开测试</h1>
+      <p>用于在微信内测试不同 App Store 链接形式的跳转表现。</p>
+    </header>
+
+    <section>
+      <div class="actions">
+        <a class="button" href="itms-apps://apps.apple.com/cn/app/id6780332042" data-url="itms-apps://apps.apple.com/cn/app/id6780332042">
+          打开 itms-apps apps.apple.com
+          <span class="url">itms-apps://apps.apple.com/cn/app/id6780332042</span>
+        </a>
+        <a class="button" href="itms-apps://itunes.apple.com/app/id6780332042" data-url="itms-apps://itunes.apple.com/app/id6780332042">
+          打开 itms-apps itunes.apple.com
+          <span class="url">itms-apps://itunes.apple.com/app/id6780332042</span>
+        </a>
+        <a class="button" href="https://apps.apple.com/cn/app/id6780332042" data-url="https://apps.apple.com/cn/app/id6780332042">
+          打开 HTTPS apps.apple.com
+          <span class="url">https://apps.apple.com/cn/app/id6780332042</span>
+        </a>
+      </div>
+      <div class="status" id="status">尚未点击</div>
+    </section>
+  </main>
+
+  <script>
+    const status = document.getElementById("status");
+
+    document.querySelectorAll(".button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const now = new Date().toLocaleString("zh-CN", { hour12: false });
+        status.textContent = `${now} 点击：${button.dataset.url}`;
+      });
+    });
+  </script>
+</body>
+</html>
